@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บริษัท อุดมวิศว์ ซัพพลาย จำกัด - ผู้เชี่ยวชาญระบบปั๊มน้ำสำหรับองค์กร</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use Inter font and custom colors -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+Thai:wght@100..900&display=swap');
+        body {
+            font-family: 'Noto Sans Thai', 'Inter', sans-serif;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#0A4C9B',
+                        'accent-cyan': '#00A0C5',
+                        'bg-light': '#F8F9FA',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bg-light text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-primary-blue shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-white text-2xl font-bold tracking-wider">
+                อุดมวิศว์ ซัพพลาย
+                <span class="block text-sm font-normal opacity-75">Audomvit Supply Co., Ltd.</span>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-white text-lg">
+                <a href="#services" class="hover:text-accent-cyan transition duration-300">บริการ</a>
+                <a href="#expertise" class="hover:text-accent-cyan transition duration-300">กลุ่มลูกค้า</a>
+                <a href="#contact" class="hover:text-accent-cyan transition duration-300">ติดต่อเรา</a>
+            </nav>
+            <a href="#contact" class="md:hidden p-2 text-white bg-accent-cyan rounded-lg hover:bg-opacity-90 transition duration-300">
+                <!-- Icon for mobile contact -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-white pt-16 pb-20 md:py-32 overflow-hidden shadow-inner">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:w-3/5">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                    ผู้เชี่ยวชาญด้าน <span class="text-primary-blue">ระบบปั๊มน้ำ</span>
+                </h1>
+                <p class="text-xl sm:text-2xl text-accent-cyan font-semibold mb-8">
+                    สำหรับองค์กร และโรงงานอุตสาหกรรม
+                </p>
+                <p class="text-gray-600 mb-10 text-lg max-w-lg">
+                    เราให้บริการติดตั้ง ซ่อมบำรุง และดูแลระบบปั๊มน้ำขนาดใหญ่ ด้วยทีมงานวิศวกรที่มีประสบการณ์สูง
+                    เน้นความเสถียรและความยั่งยืนของระบบน้ำในธุรกิจของคุณ
+                </p>
+                <a href="#services" class="inline-block px-8 py-3 text-lg font-bold text-white bg-accent-cyan rounded-xl shadow-xl hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
+                    ดูบริการของเรา
+                </a>
+            </div>
+        </div>
+        <!-- Abstract Water/Industry background element -->
+        <div class="hidden lg:block absolute right-0 top-0 w-2/5 h-full bg-primary-blue bg-opacity-10 clip-path-polygon-[25%_0%,_100%_0%,_100%_100%,_0%_100%]">
+            <!-- Placeholder Image for industrial pump -->
+            <img src="https://placehold.co/800x600/0A4C9B/ffffff?text=Industrial+Pump" alt="ภาพปั๊มน้ำอุตสาหกรรม" class="absolute inset-0 w-full h-full object-cover opacity-75 mix-blend-multiply rounded-bl-[50px]">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-4">บริการหลักของเรา</h2>
+            <p class="text-xl text-center text-gray-600 mb-12">เราพร้อมดูแลระบบน้ำของคุณให้ทำงานได้อย่างเต็มประสิทธิภาพ</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Service 1: Installation -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-accent-cyan transform hover:scale-[1.02] transition duration-300">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-accent-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <h3 class="text-2xl font-bold text-gray-900">ติดตั้งระบบใหม่</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        ออกแบบและติดตั้งระบบปั๊มน้ำ, Booster Pump, Transfer Pump
+                        สำหรับอาคารสูง โรงงาน และระบบสาธารณูปโภคขนาดใหญ่
+                        พร้อมรับประกันผลงาน.
+                    </p>
+                </div>
+
+                <!-- Service 2: Maintenance/Contract -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-primary-blue transform hover:scale-[1.02] transition duration-300">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <h3 class="text-2xl font-bold text-gray-900">สัญญาบำรุงรักษา (MA)</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        บริการตรวจเช็คตามระยะ, ป้องกันปัญหา, ยืดอายุการใช้งาน และลดค่าใช้จ่าย
+                        รวมถึงบริการฉุกเฉิน 24 ชั่วโมงตามข้อตกลง.
+                    </p>
+                </div>
+
+                <!-- Service 3: Repair/Overhaul -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-accent-cyan transform hover:scale-[1.02] transition duration-300">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-accent-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7h16M4 7L12 4l8 3M8 11h8M8 15h8" />
+                        </svg>
+                        <h3 class="text-2xl font-bold text-gray-900">ซ่อมและโอเวอร์ฮอล</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        ซ่อมปั๊มน้ำทุกชนิด ทุกยี่ห้อ รวมถึงการ Overhaul ปั๊มขนาดใหญ่
+                        เพื่อให้ปั๊มกลับมาทำงานได้ตามมาตรฐานและประสิทธิภาพสูงสุด.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section (Target Audience) -->
+    <section id="expertise" class="py-16 md:py-24 bg-primary-blue text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-extrabold mb-4">เรามุ่งเน้นบริการลูกค้าองค์กรและอุตสาหกรรม</h2>
+            <p class="text-xl opacity-90 mb-12">
+                ความเชี่ยวชาญของเราคือการแก้ปัญหาระบบน้ำที่มีความซับซ้อนและต้องการความต่อเนื่องสูง
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-6 text-primary-blue">
+                <span class="bg-white rounded-full px-6 py-2 font-semibold shadow-xl">โรงงานอุตสาหกรรม</span>
+                <span class="bg-white rounded-full px-6 py-2 font-semibold shadow-xl">อาคารสำนักงานขนาดใหญ่</span>
+                <span class="bg-white rounded-full px-6 py-2 font-semibold shadow-xl">คอนโดมิเนียม/ที่พักอาศัย (นิติบุคคล)</span>
+                <span class="bg-white rounded-full px-6 py-2 font-semibold shadow-xl">หมู่บ้านจัดสรร (ส่วนกลาง)</span>
+                <span class="bg-white rounded-full px-6 py-2 font-semibold shadow-xl">หน่วยงานราชการ/เทศบาล</span>
+            </div>
+
+            <div class="mt-12 p-6 bg-accent-cyan rounded-xl shadow-2xl inline-block max-w-2xl mx-auto">
+                <p class="text-lg font-bold">
+                    <span class="text-2xl mr-2">⚠️</span>
+                    <span class="underline">หมายเหตุสำคัญ:</span> เราให้บริการเฉพาะกลุ่มลูกค้าองค์กรและโรงงานอุตสาหกรรมเท่านั้น
+                </p>
+                <p class="text-base mt-2 opacity-90">
+                    **ไม่มีบริการติดตั้งหรือซ่อมปั๊มน้ำสำหรับบ้านเรือนหรือที่อยู่อาศัยส่วนบุคคล** เพื่อให้เราสามารถมุ่งเน้นคุณภาพงานบริการระดับอุตสาหกรรมได้อย่างเต็มที่
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-4">ติดต่อเรา</h2>
+            <p class="text-xl text-center text-gray-600 mb-12">พร้อมให้บริการปรึกษาและแก้ไขปัญหาระบบปั๊มน้ำของคุณ</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <!-- Contact Info Card -->
+                <div class="bg-bg-light p-8 rounded-2xl shadow-xl space-y-6">
+                    <h3 class="text-2xl font-bold text-primary-blue mb-4">บริษัท อุดมวิศว์ ซัพพลาย จำกัด</h3>
+
+                    <div class="flex items-start space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent-cyan flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        <div>
+                            <p class="font-semibold">ที่อยู่สำนักงาน:</p>
+                            <p>45/99 หมู่ที่ 5 ถนนอุดมวิศว์ แขวง/ตำบล บางปลาวาฬ</p>
+                            <p>อำเภอ บางพลี จังหวัด สมุทรปราการ 10540 (ที่อยู่สมมติ)</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent-cyan flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                        <div>
+                            <p class="font-semibold">โทรศัพท์:</p>
+                            <a href="tel:02-123-4567" class="text-primary-blue hover:text-accent-cyan transition duration-300">02-123-4567 (สำนักงาน)</a>,
+                            <a href="tel:081-999-8888" class="text-primary-blue hover:text-accent-cyan transition duration-300">081-999-8888 (สายด่วนวิศวกร)</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent-cyan flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-8 7V5.5a2.5 2.5 0 00-5 0V15a2.5 2.5 0 005 0z" /></svg>
+                        <div>
+                            <p class="font-semibold">อีเมล:</p>
+                            <a href="mailto:info@audomvit.com" class="text-primary-blue hover:text-accent-cyan transition duration-300">info@audomvit.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simple Contact Form (Placeholder functionality) -->
+                <div class="p-8 bg-white rounded-2xl shadow-xl border border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">ส่งข้อความถึงเรา</h3>
+                    <form onsubmit="event.preventDefault(); alert('ข้อความของคุณถูกส่งแล้ว! เราจะติดต่อกลับโดยเร็วที่สุด');" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">ชื่อผู้ติดต่อ/label>
+                            <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-blue focus:border-primary-blue">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">อีเมลติดต่อ</label>
+                            <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-blue focus:border-primary-blue">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">รายละเอียดโครงการ/ปัญหา</label>
+                            <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-blue focus:border-primary-blue"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-4 py-2 text-lg font-bold text-white bg-primary-blue rounded-xl shadow-md hover:bg-accent-cyan transition duration-300">
+                            ส่งคำถาม
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2025 บริษัท อุดมวิศว์ ซัพพลาย จำกัด. สงวนลิขสิทธิ์.</p>
+            <p class="mt-1">Domain: audomvit.com | บริการสำหรับองค์กรและโรงงานอุตสาหกรรมเท่านั้น.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
