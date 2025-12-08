@@ -3,232 +3,1826 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>บริษัท อุดมวิศว์ ซัพพลาย จำกัด - ผู้เชี่ยวชาญระบบปั๊มน้ำสำหรับองค์กร</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configure Tailwind to use Inter font and custom colors -->
+    <meta name="description" content="บริษัท อุดมวิศว์ ซัพพลาย จำกัด - ผู้เชี่ยวชาญด้านปั้มน้ำอุตสาหกรรม ติดตั้ง ซ่อมบำรุง สำหรับองค์กรและนิติบุคคล">
+    <meta name="keywords" content="ปั้มน้ำ, ติดตั้งปั้มน้ำ, ซ่อมปั้มน้ำ, ปั้มน้ำอุตสาหกรรม, ปั้มน้ำโรงงาน, อุดมวิศว์">
+    <title>อุดมวิศว์ ซัพพลาย | ผู้เชี่ยวชาญปั้มน้ำอุตสาหกรรม</title>
+    <link rel="canonical" href="https://audomvit.com">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+Thai:wght@100..900&display=swap');
-        body {
-            font-family: 'Noto Sans Thai', 'Inter', sans-serif;
+        :root {
+            --primary: #0A2647;
+            --primary-light: #144272;
+            --secondary: #205295;
+            --accent: #2C74B3;
+            --accent-bright: #00D4FF;
+            --white: #FFFFFF;
+            --off-white: #F8FAFC;
+            --gray-100: #E2E8F0;
+            --gray-200: #CBD5E1;
+            --gray-600: #475569;
+            --gray-800: #1E293B;
+            --success: #10B981;
+            --gradient-hero: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, var(--secondary) 100%);
+            --gradient-accent: linear-gradient(90deg, var(--accent) 0%, var(--accent-bright) 100%);
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
         }
-    </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary-blue': '#0A4C9B',
-                        'accent-cyan': '#00A0C5',
-                        'bg-light': '#F8F9FA',
-                    }
-                }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans Thai', sans-serif;
+            color: var(--gray-800);
+            line-height: 1.7;
+            background: var(--off-white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', 'IBM Plex Sans Thai', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav.scrolled {
+            background: rgba(10, 38, 71, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-lg);
+            padding: 0.75rem 0;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(44, 116, 179, 0.4);
+        }
+
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-subtext {
+            font-size: 0.7rem;
+            font-weight: 400;
+            opacity: 0.8;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: opacity 0.2s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-bright);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gradient-accent);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(44, 116, 179, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(44, 116, 179, 0.4);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-hero);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-bg-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--accent-bright);
+            opacity: 0.05;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .hero-shape:nth-child(1) {
+            width: 600px;
+            height: 600px;
+            top: -200px;
+            right: -200px;
+            animation-delay: 0s;
+        }
+
+        .hero-shape:nth-child(2) {
+            width: 400px;
+            height: 400px;
+            bottom: -100px;
+            left: -100px;
+            animation-delay: -5s;
+        }
+
+        .hero-shape:nth-child(3) {
+            width: 300px;
+            height: 300px;
+            top: 40%;
+            right: 10%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(20px, -20px) scale(1.05); }
+            50% { transform: translate(-10px, 10px) scale(0.95); }
+            75% { transform: translate(15px, 15px) scale(1.02); }
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
             }
         }
-    </script>
-</head>
-<body class="bg-bg-light text-gray-800">
 
-    <!-- Header & Navigation -->
-    <header class="bg-primary-blue shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <div class="text-white text-2xl font-bold tracking-wider">
-                อุดมวิศว์ ซัพพลาย
-                <span class="block text-sm font-normal opacity-75">Audomvit Supply Co., Ltd.</span>
-            </div>
-            <nav class="hidden md:flex space-x-6 text-white text-lg">
-                <a href="#services" class="hover:text-accent-cyan transition duration-300">บริการ</a>
-                <a href="#expertise" class="hover:text-accent-cyan transition duration-300">กลุ่มลูกค้า</a>
-                <a href="#contact" class="hover:text-accent-cyan transition duration-300">ติดต่อเรา</a>
-            </nav>
-            <a href="#contact" class="md:hidden p-2 text-white bg-accent-cyan rounded-lg hover:bg-opacity-90 transition duration-300">
-                <!-- Icon for mobile contact -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            color: var(--accent-bright);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .hero h1 span {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: burlywood;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--white);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: slideInRight 1s ease-out 0.3s both;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .stat-number span {
+            color: var(--accent-bright);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 0.25rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--white);
+            position: relative;
+        }
+
+        .section-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--off-white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid var(--gray-100);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            background: var(--white);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-hero);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .service-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--white);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .service-features {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray-100);
+        }
+
+        .service-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-feature svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--success);
+            stroke-width: 3;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            padding: 6rem 2rem;
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-us::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .why-us .section-header {
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-us .section-tag {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .why-us .section-title {
+            color: var(--white);
+        }
+
+        .why-us .section-subtitle {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .why-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+
+        .why-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 30px rgba(44, 116, 179, 0.3);
+        }
+
+        .why-icon svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--white);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .why-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .why-card p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Industries Section */
+        .industries {
+            padding: 6rem 2rem;
+            background: var(--off-white);
+        }
+
+        .industries-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .industries-text h2 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .industries-text p {
+            color: var(--gray-600);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .industry-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .industry-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid var(--gray-100);
+            transition: all 0.3s ease;
+        }
+
+        .industry-item:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-md);
+        }
+
+        .industry-item svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--accent);
+            stroke-width: 2;
+            flex-shrink: 0;
+        }
+
+        .industry-item span {
+            font-weight: 500;
+            color: var(--gray-800);
+        }
+
+        .industries-visual {
+            position: relative;
+        }
+
+        .industries-image {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            animation: floatBadge 3s ease-in-out infinite;
+        }
+
+        @keyframes floatBadge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating-badge.badge-1 {
+            top: 10%;
+            right: -20px;
+            animation-delay: 0s;
+        }
+
+        .floating-badge.badge-2 {
+            bottom: 15%;
+            left: -20px;
+            animation-delay: -1.5s;
+        }
+
+        .badge-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--white);
+            stroke-width: 2;
+        }
+
+        .badge-text strong {
+            display: block;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .badge-text span {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            background: var(--off-white);
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-info {
+            background: var(--gradient-hero);
+            padding: 3rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(44,116,179,0.3) 0%, transparent 70%);
+        }
+
+        .contact-info > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info > p {
+            opacity: 0.8;
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-detail-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-detail-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--accent-bright);
+            stroke-width: 2;
+        }
+
+        .contact-detail-text h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-detail-text p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        .contact-detail-text a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .contact-detail-text a:hover {
+            color: var(--accent-bright);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent-bright);
+            transform: translateY(-3px);
+        }
+
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--white);
+        }
+
+        .contact-form {
+            padding: 3rem;
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form > p {
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            color: var(--gray-800);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--gray-100);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(44, 116, 179, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--gradient-hero);
+            color: var(--white);
+            font-size: 1rem;
+            padding: 1rem 2rem;
+            justify-content: center;
+        }
+
+        .btn-submit:hover {
+            box-shadow: 0 8px 30px rgba(10, 38, 71, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-800);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            max-width: 300px;
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-bright);
+        }
+
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .industries-content {
+                grid-template-columns: 1fr;
+            }
+
+            .industries-visual {
+                order: -1;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+            }
+
+            .stat-item {
+                text-align: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .industry-list {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-brand p {
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .floating-badge {
+                display: none;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">UV</div>
+                <div>
+                    <div class="logo-text">AUDOMVIT</div>
+                    <div class="logo-subtext">SUPPLY CO., LTD.</div>
+                </div>
             </a>
+            
+            <ul class="nav-links">
+                <li><a href="#services">บริการ</a></li>
+                <li><a href="#why-us">ทำไมต้องเรา</a></li>
+                <li><a href="#industries">กลุ่มลูกค้า</a></li>
+                <li><a href="#contact">ติดต่อ</a></li>
+            </ul>
+            
+            <a href="#contact" class="nav-cta">ขอใบเสนอราคา</a>
+            
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="relative bg-white pt-16 pb-20 md:py-32 overflow-hidden shadow-inner">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="lg:w-3/5">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
-                    ผู้เชี่ยวชาญด้าน <span class="text-primary-blue">ระบบปั๊มน้ำ</span>
-                </h1>
-                <p class="text-xl sm:text-2xl text-accent-cyan font-semibold mb-8">
-                    สำหรับองค์กร และโรงงานอุตสาหกรรม
-                </p>
-                <p class="text-gray-600 mb-10 text-lg max-w-lg">
-                    เราให้บริการติดตั้ง ซ่อมบำรุง และดูแลระบบปั๊มน้ำขนาดใหญ่ ด้วยทีมงานวิศวกรที่มีประสบการณ์สูง
-                    เน้นความเสถียรและความยั่งยืนของระบบน้ำในธุรกิจของคุณ
-                </p>
-                <a href="#services" class="inline-block px-8 py-3 text-lg font-bold text-white bg-accent-cyan rounded-xl shadow-xl hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
-                    ดูบริการของเรา
-                </a>
-            </div>
+    <section class="hero">
+        <div class="hero-bg-shapes">
+            <div class="hero-shape"></div>
+            <div class="hero-shape"></div>
+            <div class="hero-shape"></div>
         </div>
-        <!-- Abstract Water/Industry background element -->
-        <div class="hidden lg:block absolute right-0 top-0 w-2/5 h-full bg-primary-blue bg-opacity-10 clip-path-polygon-[25%_0%,_100%_0%,_100%_100%,_0%_100%]">
-            <!-- Placeholder Image for industrial pump -->
-            <img src="https://placehold.co/800x600/0A4C9B/ffffff?text=Industrial+Pump" alt="ภาพปั๊มน้ำอุตสาหกรรม" class="absolute inset-0 w-full h-full object-cover opacity-75 mix-blend-multiply rounded-bl-[50px]">
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">พร้อมให้บริการ 24 ชม.</div>
+                <h1>ผู้เชี่ยวชาญ<br><span>ปั้มน้ำอุตสาหกรรม</span><br>ครบวงจร</h1>
+                <p class="hero-description">
+                    บริษัท อุดมวิศว์ ซัพพลาย จำกัด ให้บริการติดตั้ง ซ่อมบำรุง และจำหน่ายปั้มน้ำสำหรับองค์กร โรงงาน และนิติบุคคล ด้วยทีมงานมืออาชีพและประสบการณ์กว่า 15 ปี
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        ติดต่อเรา
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        ดูบริการทั้งหมด
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">15<span>+</span></div>
+                        <div class="stat-label">ปีประสบการณ์</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">500<span>+</span></div>
+                        <div class="stat-label">โปรเจกต์สำเร็จ</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98<span>%</span></div>
+                        <div class="stat-label">ลูกค้าพึงพอใจ</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                    <svg class="hero-image" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="500" height="400" rx="24" fill="#1E3A5F"/>
+                        <rect x="40" y="120" width="180" height="200" rx="12" fill="#2C74B3"/>
+                        <circle cx="130" cy="220" r="60" fill="#144272" stroke="#00D4FF" stroke-width="4"/>
+                        <circle cx="130" cy="220" r="30" fill="#0A2647"/>
+                        <rect x="220" y="200" width="120" height="20" rx="10" fill="#00D4FF"/>
+                        <rect x="220" y="240" width="80" height="20" rx="10" fill="#00D4FF" opacity="0.6"/>
+                        <path d="M340 200 L400 150 L400 250 L340 200" fill="#2C74B3"/>
+                        <rect x="380" y="140" width="80" height="120" rx="8" fill="#205295"/>
+                        <circle cx="420" cy="200" r="25" fill="#00D4FF" opacity="0.3"/>
+                        <circle cx="420" cy="200" r="15" fill="#00D4FF"/>
+                        <rect x="60" y="80" width="60" height="40" rx="6" fill="#205295"/>
+                        <rect x="70" y="60" width="40" height="20" rx="4" fill="#144272"/>
+                        <path d="M90 320 L90 350 L170 350 L170 320" stroke="#00D4FF" stroke-width="3" fill="none"/>
+                        <circle cx="90" cy="350" r="8" fill="#00D4FF"/>
+                        <circle cx="170" cy="350" r="8" fill="#00D4FF"/>
+                        <text x="250" y="60" fill="white" font-family="Outfit" font-size="24" font-weight="700">INDUSTRIAL PUMP</text>
+                        <text x="250" y="85" fill="#00D4FF" font-family="Outfit" font-size="14">Professional Solutions</text>
+                    </svg>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-16 md:py-24 bg-bg-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-4">บริการหลักของเรา</h2>
-            <p class="text-xl text-center text-gray-600 mb-12">เราพร้อมดูแลระบบน้ำของคุณให้ทำงานได้อย่างเต็มประสิทธิภาพ</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                <!-- Service 1: Installation -->
-                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-accent-cyan transform hover:scale-[1.02] transition duration-300">
-                    <div class="flex items-center space-x-4 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-accent-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z" />
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+    <section class="services" id="services">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">SERVICES</span>
+                <h2 class="section-title">บริการของเรา</h2>
+                <p class="section-subtitle">
+                    ครบทุกความต้องการด้านระบบปั้มน้ำ ตั้งแต่การออกแบบ ติดตั้ง ไปจนถึงการบำรุงรักษา
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
                         </svg>
-                        <h3 class="text-2xl font-bold text-gray-900">ติดตั้งระบบใหม่</h3>
                     </div>
-                    <p class="text-gray-600">
-                        ออกแบบและติดตั้งระบบปั๊มน้ำ, Booster Pump, Transfer Pump
-                        สำหรับอาคารสูง โรงงาน และระบบสาธารณูปโภคขนาดใหญ่
-                        พร้อมรับประกันผลงาน.
-                    </p>
+                    <h3>ติดตั้งระบบปั้มน้ำ</h3>
+                    <p>ออกแบบและติดตั้งระบบปั้มน้ำครบวงจร ตามมาตรฐานวิศวกรรม พร้อมทีมช่างผู้ชำนาญ</p>
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>สำรวจหน้างานฟรี</span>
+                        </div>
+                        <div class="service-feature">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>ออกแบบระบบตามความต้องการ</span>
+                        </div>
+                        <div class="service-feature">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>รับประกันผลงาน</span>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Service 2: Maintenance/Contract -->
-                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-primary-blue transform hover:scale-[1.02] transition duration-300">
-                    <div class="flex items-center space-x-4 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
                         </svg>
-                        <h3 class="text-2xl font-bold text-gray-900">สัญญาบำรุงรักษา (MA)</h3>
                     </div>
-                    <p class="text-gray-600">
-                        บริการตรวจเช็คตามระยะ, ป้องกันปัญหา, ยืดอายุการใช้งาน และลดค่าใช้จ่าย
-                        รวมถึงบริการฉุกเฉิน 24 ชั่วโมงตามข้อตกลง.
-                    </p>
+                    <h3>ซ่อมบำรุงปั้มน้ำ</h3>
+                    <p>บริการซ่อมแซมและบำรุงรักษาปั้มน้ำทุกยี่ห้อ ทุกรุ่น พร้อมอะไหล่แท้จากโรงงาน</p>
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>ซ่อมด่วน 24 ชม.</span>
+                        </div>
+                        <div class="service-feature">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>อะไหล่แท้ทุกยี่ห้อ</span>
+                        </div>
+                        <div class="service-feature">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>รับประกันหลังซ่อม</span>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Service 3: Repair/Overhaul -->
-                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-accent-cyan transform hover:scale-[1.02] transition duration-300">
-                    <div class="flex items-center space-x-4 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-accent-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7h16M4 7L12 4l8 3M8 11h8M8 15h8" />
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                         </svg>
-                        <h3 class="text-2xl font-bold text-gray-900">ซ่อมและโอเวอร์ฮอล</h3>
                     </div>
-                    <p class="text-gray-600">
-                        ซ่อมปั๊มน้ำทุกชนิด ทุกยี่ห้อ รวมถึงการ Overhaul ปั๊มขนาดใหญ่
-                        เพื่อให้ปั๊มกลับมาทำงานได้ตามมาตรฐานและประสิทธิภาพสูงสุด.
-                    </p>
+                    <h3>สัญญาบำรุงรักษา</h3>
+                    <p>แผนบำรุงรักษาเชิงป้องกัน (PM) ลดค่าใช้จ่ายซ่อมฉุกเฉิน ยืดอายุการใช้งานอุปกรณ์</p>
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>ตรวจเช็คตามรอบ</span>
+                        </div>
+                        <div class="service-feature">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>รายงานสถานะอุปกรณ์</span>
+                        </div>
+                        <div class="service-feature">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>ส่วนลดค่าอะไหล่</span>
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Expertise Section (Target Audience) -->
-    <section id="expertise" class="py-16 md:py-24 bg-primary-blue text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-extrabold mb-4">เรามุ่งเน้นบริการลูกค้าองค์กรและอุตสาหกรรม</h2>
-            <p class="text-xl opacity-90 mb-12">
-                ความเชี่ยวชาญของเราคือการแก้ปัญหาระบบน้ำที่มีความซับซ้อนและต้องการความต่อเนื่องสูง
-            </p>
-
-            <div class="flex flex-wrap justify-center gap-6 text-primary-blue">
-                <span class="bg-white rounded-full px-6 py-2 font-semibold shadow-xl">โรงงานอุตสาหกรรม</span>
-                <span class="bg-white rounded-full px-6 py-2 font-semibold shadow-xl">อาคารสำนักงานขนาดใหญ่</span>
-                <span class="bg-white rounded-full px-6 py-2 font-semibold shadow-xl">คอนโดมิเนียม/ที่พักอาศัย (นิติบุคคล)</span>
-                <span class="bg-white rounded-full px-6 py-2 font-semibold shadow-xl">หมู่บ้านจัดสรร (ส่วนกลาง)</span>
-                <span class="bg-white rounded-full px-6 py-2 font-semibold shadow-xl">หน่วยงานราชการ/เทศบาล</span>
+    <!-- Why Choose Us -->
+    <section class="why-us" id="why-us">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">WHY US</span>
+                <h2 class="section-title">ทำไมต้องเลือกเรา</h2>
+                <p class="section-subtitle">
+                    เราพร้อมเป็นพาร์ทเนอร์ด้านระบบปั้มน้ำที่คุณไว้วางใจได้
+                </p>
             </div>
+            
+            <div class="why-grid">
+                <div class="why-card fade-in">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>ประสบการณ์กว่า 15 ปี</h3>
+                    <p>ทีมงานมืออาชีพผ่านงานมาแล้วหลากหลายอุตสาหกรรม</p>
+                </div>
+                
+                <div class="why-card fade-in">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>บริการรวดเร็ว</h3>
+                    <p>ทีมช่างพร้อมออกบริการ ตอบสนองทุกปัญหาเร่งด่วน</p>
+                </div>
+                
+                <div class="why-card fade-in">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h3>มาตรฐานสูง</h3>
+                    <p>ทำงานตามมาตรฐานวิศวกรรม รับประกันคุณภาพ</p>
+                </div>
+                
+                <div class="why-card fade-in">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>ทีมงานเชี่ยวชาญ</h3>
+                    <p>วิศวกรและช่างผู้ชำนาญพร้อมให้คำปรึกษา</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="mt-12 p-6 bg-accent-cyan rounded-xl shadow-2xl inline-block max-w-2xl mx-auto">
-                <p class="text-lg font-bold">
-                    <span class="text-2xl mr-2">⚠️</span>
-                    <span class="underline">หมายเหตุสำคัญ:</span> เราให้บริการเฉพาะกลุ่มลูกค้าองค์กรและโรงงานอุตสาหกรรมเท่านั้น
-                </p>
-                <p class="text-base mt-2 opacity-90">
-                    **ไม่มีบริการติดตั้งหรือซ่อมปั๊มน้ำสำหรับบ้านเรือนหรือที่อยู่อาศัยส่วนบุคคล** เพื่อให้เราสามารถมุ่งเน้นคุณภาพงานบริการระดับอุตสาหกรรมได้อย่างเต็มที่
-                </p>
+    <!-- Industries Section -->
+    <section class="industries" id="industries">
+        <div class="section-container">
+            <div class="industries-content">
+                <div class="industries-text fade-in">
+                    <span class="section-tag">OUR CLIENTS</span>
+                    <h2>ให้บริการลูกค้าองค์กร<br>และนิติบุคคล</h2>
+                    <p>
+                        เราเชี่ยวชาญในการให้บริการระบบปั้มน้ำสำหรับธุรกิจและองค์กรขนาดใหญ่ ไม่ใช่งานตามบ้านเรือน เพื่อตอบโจทย์ความต้องการเฉพาะทางของแต่ละอุตสาหกรรม
+                    </p>
+                    
+                    <div class="industry-list">
+                        <div class="industry-item">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <rect x="4" y="2" width="16" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M9 6h6M9 10h6M9 14h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>อาคารสำนักงาน</span>
+                        </div>
+                        <div class="industry-item">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M3 21h18M5 21V7l8-4 8 4v14M9 21v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>โรงงานอุตสาหกรรม</span>
+                        </div>
+                        <div class="industry-item">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>คอนโดมิเนียม</span>
+                        </div>
+                        <div class="industry-item">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>ศูนย์การค้า</span>
+                        </div>
+                        <div class="industry-item">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>โรงพยาบาล</span>
+                        </div>
+                        <div class="industry-item">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 22V12h6v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>หมู่บ้านจัดสรร</span>
+                        </div>
+                        <div class="industry-item">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>โรงแรม / รีสอร์ท</span>
+                        </div>
+                        <div class="industry-item">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>สถานศึกษา</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="industries-visual fade-in">
+                    <svg class="industries-image" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="500" height="400" rx="24" fill="#E2E8F0"/>
+                        <rect x="50" y="100" width="120" height="200" rx="8" fill="#0A2647"/>
+                        <rect x="60" y="120" width="30" height="25" rx="4" fill="#2C74B3"/>
+                        <rect x="100" y="120" width="30" height="25" rx="4" fill="#2C74B3"/>
+                        <rect x="140" y="120" width="20" height="25" rx="4" fill="#2C74B3"/>
+                        <rect x="60" y="155" width="30" height="25" rx="4" fill="#2C74B3"/>
+                        <rect x="100" y="155" width="30" height="25" rx="4" fill="#2C74B3"/>
+                        <rect x="140" y="155" width="20" height="25" rx="4" fill="#2C74B3"/>
+                        <rect x="60" y="190" width="30" height="25" rx="4" fill="#2C74B3"/>
+                        <rect x="100" y="190" width="30" height="25" rx="4" fill="#2C74B3"/>
+                        <rect x="140" y="190" width="20" height="25" rx="4" fill="#2C74B3"/>
+                        <rect x="60" y="225" width="30" height="25" rx="4" fill="#2C74B3"/>
+                        <rect x="100" y="225" width="30" height="25" rx="4" fill="#2C74B3"/>
+                        <rect x="140" y="225" width="20" height="25" rx="4" fill="#2C74B3"/>
+                        <rect x="90" y="260" width="40" height="40" rx="4" fill="#144272"/>
+                        <rect x="200" y="150" width="150" height="150" rx="8" fill="#144272"/>
+                        <path d="M200 200 L275 150 L350 200" fill="#0A2647"/>
+                        <rect x="220" y="210" width="40" height="50" rx="4" fill="#2C74B3"/>
+                        <rect x="280" y="210" width="50" height="90" rx="4" fill="#00D4FF" opacity="0.5"/>
+                        <circle cx="305" cy="250" r="15" fill="#00D4FF"/>
+                        <rect x="380" y="180" width="80" height="120" rx="8" fill="#205295"/>
+                        <rect x="390" y="200" width="25" height="20" rx="2" fill="#00D4FF" opacity="0.6"/>
+                        <rect x="425" y="200" width="25" height="20" rx="2" fill="#00D4FF" opacity="0.6"/>
+                        <rect x="390" y="230" width="25" height="20" rx="2" fill="#00D4FF" opacity="0.6"/>
+                        <rect x="425" y="230" width="25" height="20" rx="2" fill="#00D4FF" opacity="0.6"/>
+                        <rect x="405" y="260" width="30" height="40" rx="4" fill="#0A2647"/>
+                        <rect x="30" y="300" width="440" height="8" rx="4" fill="#CBD5E1"/>
+                        <circle cx="400" cy="80" r="40" fill="#FFD93D" opacity="0.3"/>
+                        <circle cx="400" cy="80" r="25" fill="#FFD93D"/>
+                    </svg>
+                    
+                    <div class="floating-badge badge-1">
+                        <div class="badge-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <polyline points="22 4 12 14.01 9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="badge-text">
+                            <strong>500+</strong>
+                            <span>โปรเจกต์สำเร็จ</span>
+                        </div>
+                    </div>
+                    
+                    <div class="floating-badge badge-2">
+                        <div class="badge-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2"/>
+                                <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="badge-text">
+                            <strong>15+</strong>
+                            <span>ปีประสบการณ์</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-4">ติดต่อเรา</h2>
-            <p class="text-xl text-center text-gray-600 mb-12">พร้อมให้บริการปรึกษาและแก้ไขปัญหาระบบปั๊มน้ำของคุณ</p>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                <!-- Contact Info Card -->
-                <div class="bg-bg-light p-8 rounded-2xl shadow-xl space-y-6">
-                    <h3 class="text-2xl font-bold text-primary-blue mb-4">บริษัท อุดมวิศว์ ซัพพลาย จำกัด</h3>
-
-                    <div class="flex items-start space-x-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent-cyan flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                        <div>
-                            <p class="font-semibold">ที่อยู่สำนักงาน:</p>
-                            <p>1174/1 ถนนมาเจริญ แขวงหนองแขม</p>
-                            <p>เขตหนองแขม กรุงเทพมหานคร 10160</p>
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>ติดต่อเรา</h2>
+                    <p>พร้อมให้คำปรึกษาและบริการ ติดต่อเราได้ทุกช่องทาง</p>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="contact-detail-text">
+                            <h4>ที่อยู่</h4>
+                            <p>1174/1 ถนนมาเจริญ แขวงหนองแขม เขตหนองแขม กรุงเทพมหานคร 10160</p>
                         </div>
                     </div>
-
-                    <div class="flex items-center space-x-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent-cyan flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                        <div>
-                            <p class="font-semibold">โทรศัพท์:</p>
-                            <a href="tel:086-392-9190" class="text-primary-blue hover:text-accent-cyan transition duration-300">086-392-9190 (อนันชัย)</a>,
+                    
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="contact-detail-text">
+                            <h4>โทรศัพท์</h4>
+                            <p><a href="tel:+66863929190">086-392-9190</a></p>
                         </div>
                     </div>
-
-                    <div class="flex items-center space-x-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent-cyan flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-8 7V5.5a2.5 2.5 0 00-5 0V15a2.5 2.5 0 005 0z" /></svg>
-                        <div>
-                            <p class="font-semibold">อีเมล:</p>
-                            <a href="mailto:info@audomvit.com" class="text-primary-blue hover:text-accent-cyan transition duration-300">ananchai_s@audomvit.com</a>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
                         </div>
+                        <div class="contact-detail-text">
+                            <h4>อีเมล</h4>
+                            <p><a href="mailto:ananchai_s@audomvit.com">ananchai_s@audomvit.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="12 6 12 12 16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="contact-detail-text">
+                            <h4>เวลาทำการ</h4>
+                            <p>จันทร์ - เสาร์: 08:00 - 17:00 น.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LINE">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 5.82 2 10.5c0 4.16 3.58 7.64 8.44 8.36.33.07.78.22.89.51.1.26.07.67.03.93l-.14.87c-.04.27-.2 1.05.92.57 1.12-.48 6.05-3.56 8.25-6.1C21.94 13.64 22 12.1 22 10.5 22 5.82 17.52 2 12 2z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
-
-                <!-- Simple Contact Form (Placeholder functionality) -->
-                <!-- <div class="p-8 bg-white rounded-2xl shadow-xl border border-gray-200">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">ส่งข้อความถึงเรา</h3>
-                    <form onsubmit="event.preventDefault(); alert('ข้อความของคุณถูกส่งแล้ว! เราจะติดต่อกลับโดยเร็วที่สุด');" class="space-y-4">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700">ชื่อผู้ติดต่อ</label>
-                            <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-blue focus:border-primary-blue">
+                
+                <div class="contact-form">
+                    <h3>ส่งข้อความถึงเรา</h3>
+                    <p>กรอกข้อมูลด้านล่าง เราจะติดต่อกลับโดยเร็วที่สุด</p>
+                    
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">ชื่อ-นามสกุล *</label>
+                                <input type="text" id="name" name="name" required placeholder="ชื่อของคุณ">
+                            </div>
+                            <div class="form-group">
+                                <label for="company">บริษัท/องค์กร *</label>
+                                <input type="text" id="company" name="company" required placeholder="ชื่อบริษัท">
+                            </div>
                         </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700">อีเมลติดต่อ</label>
-                            <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-blue focus:border-primary-blue">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">อีเมล *</label>
+                                <input type="email" id="email" name="email" required placeholder="email@company.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">เบอร์โทรศัพท์ *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="0X-XXX-XXXX">
+                            </div>
                         </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700">รายละเอียดโครงการ/ปัญหา</label>
-                            <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-blue focus:border-primary-blue"></textarea>
+                        
+                        <div class="form-group">
+                            <label for="service">บริการที่สนใจ</label>
+                            <select id="service" name="service">
+                                <option value="">-- เลือกบริการ --</option>
+                                <option value="install">ติดตั้งระบบปั้มน้ำ</option>
+                                <option value="repair">ซ่อมบำรุงปั้มน้ำ</option>
+                                <option value="maintenance">สัญญาบำรุงรักษา (PM)</option>
+                                <option value="consult">ขอคำปรึกษา</option>
+                                <option value="other">อื่น ๆ</option>
+                            </select>
                         </div>
-                        <button type="submit" class="w-full px-4 py-2 text-lg font-bold text-white bg-primary-blue rounded-xl shadow-md hover:bg-accent-cyan transition duration-300">
-                            ส่งคำถาม
+                        
+                        <div class="form-group">
+                            <label for="message">รายละเอียด</label>
+                            <textarea id="message" name="message" placeholder="กรุณาระบุรายละเอียดเพิ่มเติม เช่น ประเภทอาคาร ขนาดพื้นที่ ปัญหาที่พบ เป็นต้น"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-submit">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                            ส่งข้อความ
                         </button>
                     </form>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
-            <p>&copy; 2025 บริษัท อุดมวิศว์ ซัพพลาย จำกัด. สงวนลิขสิทธิ์.</p>
-            <p class="mt-1">Domain: audomvit.com | บริการสำหรับองค์กรและโรงงานอุตสาหกรรมเท่านั้น.</p>
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <div class="logo-icon">UV</div>
+                    <div>
+                        <div class="logo-text">AUDOMVIT</div>
+                        <div class="logo-subtext">SUPPLY CO., LTD.</div>
+                    </div>
+                </a>
+                <p>
+                    บริษัท อุดมวิศว์ ซัพพลาย จำกัด ผู้เชี่ยวชาญด้านระบบปั้มน้ำอุตสาหกรรม ให้บริการติดตั้ง ซ่อมบำรุง และจำหน่ายปั้มน้ำสำหรับองค์กรและนิติบุคคล
+                </p>
+            </div>
+            
+            <div class="footer-column">
+                <h4>บริการ</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">ติดตั้งระบบปั้มน้ำ</a></li>
+                    <li><a href="#services">ซ่อมบำรุงปั้มน้ำ</a></li>
+                    <li><a href="#services">สัญญาบำรุงรักษา</a></li>
+                    <li><a href="#contact">ขอใบเสนอราคา</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>กลุ่มลูกค้า</h4>
+                <ul class="footer-links">
+                    <li><a href="#industries">อาคารสำนักงาน</a></li>
+                    <li><a href="#industries">โรงงานอุตสาหกรรม</a></li>
+                    <li><a href="#industries">คอนโดมิเนียม</a></li>
+                    <li><a href="#industries">ศูนย์การค้า</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>ติดต่อ</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:+66XXXXXXXX">02-XXX-XXXX</a></li>
+                    <li><a href="mailto:info@audomvit.com">info@audomvit.com</a></li>
+                    <li><a href="https://audomvit.com">audomvit.com</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>2025 บริษัท อุดมวิศว์ ซัพพลาย จำกัด. All rights reserved.</p>
+            <p>Designed for audomvit.com</p>
         </div>
     </footer>
 
+    <script>
+        // Navigation scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Form submission
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to a server
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            alert('ขอบคุณสำหรับข้อความ เราจะติดต่อกลับโดยเร็วที่สุด');
+            form.reset();
+        });
+
+        // Mobile menu toggle (basic functionality)
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        mobileMenuBtn.addEventListener('click', () => {
+            // Add your mobile menu toggle logic here
+            alert('Mobile menu - implement dropdown navigation');
+        });
+    </script>
 </body>
 </html>
