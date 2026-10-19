@@ -1377,6 +1377,14 @@ form.addEventListener('submit', async e => {
     }
     const d = Object.fromEntries(new FormData(form));
 
+    // FormSubmit ตัดตัวอักษรที่ไม่ใช่ภาษาอังกฤษออกจากชื่อไฟล์ จึงตั้งชื่อใหม่ และส่งชื่อเดิมไปในตารางแทน
+    const uploads = attachments.map((f, i) => {
+        const ext = (f.name.match(/\.(\w+)$/) || [, f.type === 'application/pdf' ? 'pdf' : 'jpg'])[1].toLowerCase();
+        const base = f.name.replace(/\.\w+$/, '').normalize('NFKD').replace(/[^A-Za-z0-9_-]+/g, '-').replace(/^-+|-+$/g, '');
+        const name = `${i + 1}-${base.length >= 2 ? base.slice(0, 40) : 'file'}.${ext}`;
+        return { file: new File([f], name, { type: f.type }), original: f.name };
+    });
+
     const body = new FormData();
     Object.entries({
         'ชื่อผู้ติดต่อ': d.name,
@@ -1385,7 +1393,7 @@ form.addEventListener('submit', async e => {
         'อีเมล': d.email || '-',
         'ประเภทงาน': d.service,
         'รายละเอียดงาน': d.message || '-',
-        'ไฟล์แนบ': attachments.length ? `${attachments.length} ไฟล์` : '-',
+        'ไฟล์แนบ': uploads.length ? uploads.map(u => u.file.name === u.original ? u.original : `${u.file.name} (${u.original})`).join(', ') : '-',
         _subject: `ติดต่อสอบถาม: ${d.service} (${d.company})`,
         _template: 'table',
         _captcha: 'false',
@@ -1411,9 +1419,9 @@ form.addEventListener('submit', async e => {
             input.value = v;
             native.appendChild(input);
         }
-        attachments.forEach((f, i) => {
+        uploads.forEach(({ file }, i) => {
             const dt = new DataTransfer();
-            dt.items.add(f);
+            dt.items.add(file);
             const input = document.createElement('input');
             input.type = 'file';
             input.name = `attachment${i + 1}`;
