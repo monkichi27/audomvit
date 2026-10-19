@@ -1,2248 +1,1263 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="บริษัท อุดมวิศว์ ซัพพลาย จำกัด - ผู้เชี่ยวชาญด้านปั้มน้ำอุตสาหกรรม ติดตั้ง ซ่อมบำรุง สำหรับองค์กรและนิติบุคคล">
-    <meta name="keywords" content="ปั้มน้ำ, ติดตั้งปั้มน้ำ, ซ่อมปั้มน้ำ, ปั้มน้ำอุตสาหกรรม, ปั้มน้ำโรงงาน, อุดมวิศว์">
-    <title>อุดมวิศว์ ซัพพลาย | ผู้เชี่ยวชาญปั้มน้ำอุตสาหกรรม</title>
-    <link rel="canonical" href="https://audomvit.com">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            /* Modern Color Palette */
-            --primary: #0f172a;       /* Slate 900 */
-            --primary-light: #1e293b; /* Slate 800 */
-            --secondary: #334155;     /* Slate 700 */
-            
-            /* Vibrant Accents */
-            --accent: #0284c7;        /* Sky 600 */
-            --accent-bright: #38bdf8; /* Sky 400 */
-            --accent-glow: rgba(56, 189, 248, 0.5);
-            
-            /* Neutrals */
-            --white: #ffffff;
-            --off-white: #f8fafc;     /* Slate 50 */
-            --gray-100: #f1f5f9;      /* Slate 100 */
-            --gray-200: #e2e8f0;      /* Slate 200 */
-            --gray-600: #475569;      /* Slate 600 */
-            --gray-800: #1e293b;      /* Slate 800 */
-            
-            /* Functional */
-            --success: #10b981;       /* Emerald 500 */
-            --warning: #f59e0b;       /* Amber 500 */
-            --error: #ef4444;         /* Red 500 */
-            
-            /* Gradients */
-            --gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-bright) 100%);
-            --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-            
-            /* Shadows */
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
-            --shadow-glow: 0 0 20px var(--accent-glow);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'IBM Plex Sans Thai', sans-serif;
-            color: var(--gray-800);
-            line-height: 1.7;
-            background: var(--off-white);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Outfit', 'IBM Plex Sans Thai', sans-serif;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-        }
-
-        /* Navigation */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 1.5rem 0;
-            transition: all 0.3s ease;
-        }
-
-        .nav.scrolled {
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255,255,255,0.15);
-            padding: 0.8rem 0;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.2);
-        }
-
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: var(--white);
-            z-index: 1001;
-        }
-
-        .logo-img {
-            height: 50px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            position: relative;
-            padding: 0.5rem 0;
-            transition: color 0.2s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--white);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-bright);
-            transition: width 0.3s ease;
-            box-shadow: 0 0 10px var(--accent-glow);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-cta {
-            background: var(--gradient-accent);
-            color: var(--white) !important;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(2, 132, 199, 0.5);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            z-index: 1001;
-        }
-
-        .mobile-menu-btn span {
-            width: 28px;
-            height: 2px;
-            background: var(--white);
-            border-radius: 2px;
-            transition: all 0.3s;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            background: var(--primary);
-            background-image:
-                radial-gradient(circle at 10% 20%, rgba(2, 132, 199, 0.25) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 60%),
-                var(--gradient-hero);
-            position: relative;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            padding-top: 80px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            background: linear-gradient(180deg, rgba(0, 50, 100, 0.3) 0%, transparent 100%);
-            z-index: 0;
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 1;
-            pointer-events: none;
-        }
-
-        .hero-bg-shapes {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .hero-shape {
-            position: absolute;
-            border-radius: 50%;
-            background: var(--accent);
-            filter: blur(80px);
-            opacity: 0.4;
-            animation: float 20s ease-in-out infinite;
-        }
-
-        .hero-shape:nth-child(1) {
-            width: 500px;
-            height: 500px;
-            top: -100px;
-            right: -100px;
-            animation-delay: 0s;
-            background: var(--secondary);
-        }
-
-
-        .hero-shape:nth-child(2) {
-            width: 400px;
-            height: 400px;
-            bottom: -100px;
-            left: -100px;
-            animation-delay: -5s;
-        }
-
-        .hero-shape:nth-child(3) {
-            width: 300px;
-            height: 300px;
-            top: 40%;
-            right: 10%;
-            animation-delay: -10s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(20px, -20px) scale(1.05); }
-            50% { transform: translate(-10px, 10px) scale(0.95); }
-            75% { transform: translate(15px, 15px) scale(1.02); }
-        }
-
-        .hero-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 8rem 2rem 4rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content {
-            animation: slideInLeft 1s ease-out;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            color: var(--accent);
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .hero-badge::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: var(--success);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.03em;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-description {
-            font-size: 1.15rem;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 2rem;
-            max-width: 500px;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--white);
-            color: var(--primary);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid rgba(255,255,255,0.3);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: var(--white);
-        }
-
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: slideInRight 1s ease-out 0.3s both;
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .hero-image-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-        }
-
-        .hero-image {
-            width: 100%;
-            height: auto;
-            border-radius: 24px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 3rem;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .stat-item {
-            text-align: left;
-        }
-
-        .stat-number {
-            font-family: 'Outfit', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--white);
-            line-height: 1;
-        }
-
-        .stat-number span {
-            color: var(--accent-bright);
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.6);
-            margin-top: 0.25rem;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 6rem 2rem;
-            background: var(--white);
-            position: relative;
-        }
-
-        .section-container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-tag {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
-            color: var(--white);
-            padding: 0.5rem 1.25rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--gray-600);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--off-white);
-            border-radius: 20px;
-            padding: 2.5rem;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            border: 1px solid var(--gray-100);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-accent);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            background: var(--white);
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--gradient-hero);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            transition: transform 0.4s ease;
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(-5deg);
-        }
-
-        .service-icon svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--white);
-            stroke-width: 2;
-            fill: none;
-        }
-
-        .service-card h3 {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-        }
-
-        .service-card p {
-            color: var(--gray-600);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .service-features {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--gray-100);
-        }
-
-        .service-feature {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--gray-600);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .service-feature svg {
-            width: 16px;
-            height: 16px;
-            stroke: var(--success);
-            stroke-width: 3;
-        }
-
-        /* Why Choose Us */
-        .why-us {
-            padding: 6rem 2rem;
-            background: var(--gradient-hero);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .why-us::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-        }
-
-        .why-us .section-header {
-            position: relative;
-            z-index: 1;
-        }
-
-        .why-us .section-tag {
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .why-us .section-title {
-            color: var(--white);
-        }
-
-        .why-us .section-subtitle {
-            color: rgba(255,255,255,0.8);
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .why-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.4s ease;
-        }
-
-        .why-card:hover {
-            background: rgba(255,255,255,0.15);
-            transform: translateY(-5px);
-        }
-
-        .why-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            box-shadow: 0 10px 30px rgba(44, 116, 179, 0.3);
-        }
-
-        .why-icon svg {
-            width: 36px;
-            height: 36px;
-            stroke: var(--white);
-            stroke-width: 2;
-            fill: none;
-        }
-
-        .why-card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 0.75rem;
-        }
-
-        .why-card p {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9rem;
-        }
-
-        /* Brands Section */
-        .brands {
-            padding: 4rem 2rem;
-            background: var(--white);
-            border-top: 1px solid var(--gray-100);
-            border-bottom: 1px solid var(--gray-100);
-        }
-
-        .brands-container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .brands-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .brands-header h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .brands-header p {
-            color: var(--gray-600);
-            font-size: 0.95rem;
-        }
-
-        .brands-grid {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .brand-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1.5rem 2rem;
-            background: var(--white);
-            border: 2px solid var(--gray-100);
-            border-radius: 16px;
-            transition: all 0.3s ease;
-            min-width: 120px;
-        }
-
-        .brand-item:hover {
-            border-color: var(--accent);
-            box-shadow: var(--shadow-md);
-            transform: translateY(-3px);
-        }
-
-        .brand-logo {
-            width: 60px;
-            height: 60px;
-            background: var(--off-white);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 800;
-            font-size: 0.7rem;
-            color: var(--primary);
-            text-align: center;
-            line-height: 1.2;
-        }
-
-        .brand-name {
-            font-weight: 600;
-            color: var(--gray-800);
-            font-size: 0.9rem;
-        }
-
-        /* Industries Section */
-        .industries {
-            padding: 6rem 2rem;
-            background: var(--off-white);
-        }
-
-        .industries-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .industries-text h2 {
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .industries-text p {
-            color: var(--gray-600);
-            font-size: 1.05rem;
-            margin-bottom: 2rem;
-        }
-
-        .industry-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .industry-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            background: var(--white);
-            border-radius: 12px;
-            border: 1px solid var(--gray-100);
-            transition: all 0.3s ease;
-        }
-
-        .industry-item:hover {
-            border-color: var(--accent);
-            box-shadow: var(--shadow-md);
-        }
-
-        .industry-item svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--accent);
-            stroke-width: 2;
-            flex-shrink: 0;
-        }
-
-        .industry-item span {
-            font-weight: 500;
-            color: var(--gray-800);
-        }
-
-        .industries-visual {
-            position: relative;
-        }
-
-        .industries-image {
-            width: 100%;
-            border-radius: 24px;
-            box-shadow: var(--shadow-xl);
-        }
-
-        .floating-badge {
-            position: absolute;
-            background: var(--white);
-            border-radius: 16px;
-            padding: 1.25rem 1.5rem;
-            box-shadow: var(--shadow-lg);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            animation: floatBadge 3s ease-in-out infinite;
-        }
-
-        @keyframes floatBadge {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .floating-badge.badge-1 {
-            top: 10%;
-            right: -20px;
-            animation-delay: 0s;
-        }
-
-        .floating-badge.badge-2 {
-            bottom: 15%;
-            left: -20px;
-            animation-delay: -1.5s;
-        }
-
-        .badge-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-accent);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .badge-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--white);
-            stroke-width: 2;
-        }
-
-        .badge-text strong {
-            display: block;
-            font-size: 1.25rem;
-            color: var(--primary);
-        }
-
-        .badge-text span {
-            font-size: 0.85rem;
-            color: var(--gray-600);
-        }
-
-        /* Portfolio Section */
-        .portfolio {
-            padding: 6rem 2rem;
-            background: var(--off-white);
-        }
-
-        .portfolio-grid {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .portfolio-item {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            background: var(--white);
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.95) 100%);
-            padding: 2rem 1.5rem 1.5rem;
-            color: var(--white);
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            transform: translateY(0);
-        }
-
-        .portfolio-overlay h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .portfolio-overlay p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 6rem 2rem;
-            background: var(--white);
-        }
-
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 4rem;
-            background: var(--off-white);
-            border-radius: 32px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .contact-info {
-            background: var(--gradient-hero);
-            padding: 3rem;
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-info::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(44,116,179,0.3) 0%, transparent 70%);
-        }
-
-        .contact-info > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .contact-info h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .contact-info > p {
-            opacity: 0.8;
-            margin-bottom: 2.5rem;
-            font-size: 1.05rem;
-        }
-
-        .contact-detail {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-detail-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .contact-detail-icon svg {
-            width: 22px;
-            height: 22px;
-            stroke: var(--accent-bright);
-            stroke-width: 2;
-        }
-
-        .contact-detail-text h4 {
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-detail-text p {
-            opacity: 0.8;
-            font-size: 0.95rem;
-        }
-
-        .contact-detail-text a {
-            color: var(--white);
-            text-decoration: none;
-        }
-
-        .contact-detail-text a:hover {
-            color: var(--accent-bright);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2.5rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .social-link {
-            width: 44px;
-            height: 44px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: var(--accent-bright);
-            transform: translateY(-3px);
-        }
-
-        .social-link svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--white);
-        }
-
-        .contact-form {
-            padding: 3rem;
-        }
-
-        .contact-form h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-form > p {
-            color: var(--gray-600);
-            margin-bottom: 2rem;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 500;
-            color: var(--gray-800);
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 2px solid var(--gray-100);
-            border-radius: 10px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: all 0.3s ease;
-            background: var(--white);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 4px rgba(44, 116, 179, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .btn-submit {
-            width: 100%;
-            background: var(--gradient-hero);
-            color: var(--white);
-            font-size: 1rem;
-            padding: 1rem 2rem;
-            justify-content: center;
-        }
-
-        .btn-submit:hover {
-            box-shadow: 0 8px 30px rgba(10, 38, 71, 0.3);
-        }
-
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, var(--gray-800) 0%, var(--primary) 100%);
-            color: var(--white);
-            padding: 4rem 2rem 2rem;
-        }
-
-        .footer-grid {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 3rem;
-            padding-bottom: 3rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-brand p {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.95rem;
-            line-height: 1.8;
-            max-width: 300px;
-        }
-
-        .footer-column h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--white);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-links a {
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-bright);
-        }
-
-        .footer-bottom {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-bottom p {
-            color: rgba(255,255,255,0.5);
-            font-size: 0.9rem;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 1024px) {
-            .nav-links {
-                display: none;
-            }
-
-            .nav-cta {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: flex;
-            }
-
-            .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-description {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-cta {
-                justify-content: center;
-            }
-
-            .hero-stats {
-                justify-content: center;
-            }
-
-            .hero-visual {
-                order: -1;
-            }
-
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .why-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .industries-content {
-                grid-template-columns: 1fr;
-            }
-
-            .industries-visual {
-                order: -1;
-            }
-
-            .contact-wrapper {
-                grid-template-columns: 1fr;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.25rem;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 1.5rem;
-                align-items: center;
-            }
-
-            .stat-item {
-                text-align: center;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .why-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .industry-list {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-brand {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .footer-brand p {
-                text-align: center;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .floating-badge {
-                display: none;
-            }
-        }
-
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>อุดมวิศว์ ซัพพลาย | ปั๊ม โบลเวอร์ ระบบท่อ และระบบดับเพลิง สำหรับโรงงานและอาคาร</title>
+<meta name="description" content="บริษัท อุดมวิศว์ ซัพพลาย จำกัด จำหน่าย ติดตั้ง และซ่อมบำรุง (Overhaul) ปั๊มน้ำ Blower & Vacuum pump ระบบท่อ และ Fire pump สำหรับโรงงาน โรงพยาบาล และอาคาร พร้อม Commissioning & Test run">
+<meta name="keywords" content="ปั๊มน้ำอุตสาหกรรม, ปั้มน้ำ, ติดตั้งปั๊ม, ซ่อมปั๊ม, Overhaul ANLET, Roots blower, Vacuum pump, Fire pump, ท่อ PPR, ล้างบ่อน้ำเสีย, งานอับอากาศ, อุดมวิศว์">
+<link rel="canonical" href="https://audomvit.com/">
+<meta name="theme-color" content="#0F2B2C">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://audomvit.com/">
+<meta property="og:title" content="อุดมวิศว์ ซัพพลาย | งานปั๊ม โบลเวอร์ และระบบท่อ">
+<meta property="og:description" content="จำหน่าย ติดตั้ง ซ่อมบำรุงปั๊ม Blower & Vacuum ระบบท่อ และ Fire pump สำหรับโรงงานและอาคาร">
+<meta property="og:image" content="https://audomvit.com/assets/og.jpg">
+<meta property="og:locale" content="th_TH">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600&family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "บริษัท อุดมวิศว์ ซัพพลาย จำกัด",
+  "alternateName": "Audomvit Supply Co., Ltd.",
+  "url": "https://audomvit.com/",
+  "logo": "https://audomvit.com/data/logo4_nobg.png",
+  "image": "https://audomvit.com/assets/og.jpg",
+  "telephone": "+66863929190",
+  "email": "ananchai_s@audomvit.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1174/1 ถนนมาเจริญ แขวงหนองแขม",
+    "addressLocality": "เขตหนองแขม",
+    "addressRegion": "กรุงเทพมหานคร",
+    "postalCode": "10160",
+    "addressCountry": "TH"
+  },
+  "openingHours": "Mo-Sa 08:00-17:00",
+  "areaServed": ["TH", "LA", "KH"]
+}
+</script>
+
+<style>
+:root {
+    --ink: #0F2B2C;
+    --ink-soft: #3C5354;
+    --paper: #ECEFED;
+    --paper-raised: #F7F8F7;
+    --line: #CBD3D0;
+    --teal: #13A08C;
+    --green: #0C5A4E;
+    --safety: #F2B632;
+
+    /* Pipe identification colours, one per type of work */
+    --pipe-pump: #2D6FB7;
+    --pipe-blower: #0D7C6C;
+    --pipe-pipe: #5F6F73;
+    --pipe-confined: #8A6630;
+    --pipe-fire: #D23A2E;
+
+    --font-head: 'Bai Jamjuree', 'Anuphan', sans-serif;
+    --font-body: 'Anuphan', sans-serif;
+    --wrap: 1200px;
+    --gutter: clamp(16px, 4vw, 40px);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+
+h1, h2, h3 {
+    font-family: var(--font-head);
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.wrap {
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
+:focus-visible {
+    outline: 3px solid var(--safety);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+.skip {
+    position: absolute;
+    left: -999px;
+    top: 8px;
+    background: var(--ink);
+    color: #fff;
+    padding: .5rem 1rem;
+    z-index: 200;
+}
+.skip:focus { left: 8px; }
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    padding: .85rem 1.4rem;
+    border-radius: 6px;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: background-color .15s, border-color .15s;
+}
+.btn svg { width: 1.15em; height: 1.15em; flex: none; }
+.btn-primary { background: var(--safety); color: var(--ink); }
+.btn-primary:hover { background: #FFC649; }
+.btn-ghost { border-color: var(--ink); color: var(--ink); }
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+/* ---------- Header ---------- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(236, 239, 237, .94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+}
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    gap: 1.5rem;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    text-decoration: none;
+}
+.brand img { height: 38px; width: auto; }
+.brand-name {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: .95rem;
+    line-height: 1.25;
+}
+.brand-name small {
+    display: block;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: .75rem;
+    color: var(--ink-soft);
+}
+.main-nav ul {
+    display: flex;
+    gap: 1.75rem;
+    list-style: none;
+    align-items: center;
+}
+.main-nav a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: .975rem;
+}
+.main-nav a:hover { color: var(--green); text-decoration: underline; text-underline-offset: 6px; }
+.header-call { padding: .55rem 1rem; }
+.nav-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+}
+.nav-toggle span, .nav-toggle span::before, .nav-toggle span::after {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--ink);
+    margin: 0 auto;
+    position: relative;
+    transition: transform .2s;
+}
+.nav-toggle span::before, .nav-toggle span::after { content: ''; position: absolute; }
+.nav-toggle span::before { top: -7px; }
+.nav-toggle span::after { top: 7px; }
+.nav-toggle[aria-expanded="true"] span { background: transparent; }
+.nav-toggle[aria-expanded="true"] span::before { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span::after { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---------- Hero ---------- */
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    min-height: min(78vh, 720px);
+}
+.hero-text {
+    padding: clamp(3rem, 7vw, 6rem) var(--gutter) clamp(2.5rem, 5vw, 4rem);
+    padding-left: max(var(--gutter), calc((100vw - var(--wrap)) / 2 + var(--gutter)));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hero h1 {
+    font-size: clamp(2rem, 3.5vw, 2.9rem);
+    line-height: 1.25;
+    letter-spacing: -.01em;
+}
+.hero h1 span { display: inline-block; }
+.hero-lede {
+    margin-top: 1.5rem;
+    max-width: 34rem;
+    color: var(--ink-soft);
+    font-size: 1.125rem;
+}
+.hero-actions {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+}
+.hero-photo {
+    position: relative;
+    overflow: hidden;
+    background: var(--ink);
+}
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: hero-in 1.4s cubic-bezier(.2, .7, .2, 1) both;
+}
+@keyframes hero-in {
+    from { transform: scale(1.08); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+.hero-photo figcaption {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    right: 1rem;
+    max-width: max-content;
+    background: rgba(15, 43, 44, .86);
+    color: #fff;
+    font-size: .875rem;
+    line-height: 1.5;
+    padding: .55rem .9rem;
+    border-radius: 4px;
+    border-left: 4px solid var(--pipe-pump);
+}
+
+/* Pipe band: the five types of work as colour-coded pipe segments */
+.pipe-band {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background: var(--ink);
+}
+.pipe-band a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    min-height: 64px;
+    padding: .75rem 1.5rem .75rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: .95rem;
+    line-height: 1.3;
+    background: var(--c);
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%, 14px 50%);
+    margin-left: -10px;
+}
+.pipe-band a:first-child { margin-left: 0; clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%); }
+.pipe-band a:hover { filter: brightness(1.12); }
+.pipe-band a span { padding-left: 1rem; }
+.pipe-band a:first-child span { padding-left: 0; }
+
+/* ---------- Clients ---------- */
+.clients {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--line);
+}
+.clients p {
+    color: var(--ink-soft);
+    font-size: .95rem;
+    margin-bottom: 1rem;
+}
+.client-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem 2.25rem;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    color: var(--ink);
+}
+
+/* ---------- Sections ---------- */
+.section { padding: clamp(4rem, 8vw, 6.5rem) 0; }
+.section-head { max-width: 44rem; margin-bottom: 3rem; }
+.section-head h2 { font-size: clamp(1.75rem, 3.2vw, 2.5rem); }
+.section-head p { margin-top: .9rem; color: var(--ink-soft); }
+
+/* Services: rows marked with their pipe colour */
+.service-list { list-style: none; border-top: 2px solid var(--ink); }
+.service {
+    --c: var(--teal);
+    display: grid;
+    grid-template-columns: 6px minmax(0, 1fr) minmax(0, 1.4fr);
+    gap: 0 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--line);
+}
+.service::before {
+    content: '';
+    background: var(--c);
+    border-radius: 3px;
+}
+.service h3 { font-size: 1.35rem; }
+.service h3 small {
+    display: block;
+    margin-top: .25rem;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: .9rem;
+    color: var(--ink-soft);
+}
+.service p { max-width: 38rem; }
+.service ul {
+    margin-top: .75rem;
+    padding-left: 1.2rem;
+    color: var(--ink-soft);
+}
+.service .see-work {
+    display: inline-block;
+    margin-top: .9rem;
+    font-weight: 600;
+    color: var(--green);
+}
+
+.t-pump { --c: var(--pipe-pump); }
+.t-blower { --c: var(--pipe-blower); }
+.t-pipe { --c: var(--pipe-pipe); }
+.t-confined { --c: var(--pipe-confined); }
+.t-fire { --c: var(--pipe-fire); }
+
+/* ---------- Projects ---------- */
+.projects { background: var(--ink); color: #fff; }
+.projects .section-head p { color: #B9C7C5; }
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-bottom: 2rem;
+}
+.filter {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    padding: .5rem 1rem;
+    border: 1.5px solid rgba(255, 255, 255, .28);
+    border-radius: 999px;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-size: .95rem;
+}
+.filter::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--c);
+}
+.filter[data-filter="all"]::before { display: none; }
+.filter:hover { border-color: #fff; }
+.filter[aria-pressed="true"] { background: #fff; color: var(--ink); border-color: #fff; }
+.filter .count { opacity: .6; font-size: .85em; }
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+.project {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background: #163739;
+    border: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    color: #fff;
+}
+.project[hidden] { display: none; }
+.project-img {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background: #0A1F20;
+    border-bottom: 5px solid var(--c);
+}
+.project-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.project-img .n-photos {
+    position: absolute;
+    right: .6rem;
+    bottom: .6rem;
+    background: rgba(15, 43, 44, .85);
+    font-size: .8rem;
+    padding: .1rem .55rem;
+    border-radius: 3px;
+}
+.project-body { padding: 1rem 1.1rem 1.25rem; }
+.project-body h3 { font-size: 1.1rem; }
+.project-body p { margin-top: .3rem; font-size: .95rem; line-height: 1.6; color: #B9C7C5; }
+.project:hover .project-body h3 { text-decoration: underline; text-underline-offset: 5px; }
+
+.ref-download { margin-top: 2.5rem; color: #B9C7C5; }
+.ref-download a { color: #fff; font-weight: 600; }
+
+/* Project viewer */
+.viewer {
+    border: 0;
+    padding: 0;
+    width: min(1100px, 100vw - 2rem);
+    max-height: calc(100vh - 2rem);
+    margin: auto;
+    background: var(--paper-raised);
+    color: var(--ink);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.viewer::backdrop { background: rgba(10, 25, 26, .82); }
+.viewer[open] { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); }
+.viewer-stage {
+    position: relative;
+    background: #0A1F20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: min(78vh, 640px);
+}
+.viewer-stage img { width: 100%; height: 100%; object-fit: contain; }
+.viewer-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(255, 255, 255, .9);
+    cursor: pointer;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+.viewer-nav.prev { left: .75rem; }
+.viewer-nav.next { right: .75rem; }
+.viewer-info {
+    padding: 2rem 1.75rem;
+    overflow-y: auto;
+    border-top: 6px solid var(--c, var(--teal));
+}
+.viewer-info .cat {
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+}
+.viewer-info h3 { font-size: 1.5rem; margin-top: .3rem; }
+.viewer-info dl { margin-top: 1.25rem; }
+.viewer-info dt { font-size: .85rem; color: var(--ink-soft); margin-top: .9rem; }
+.viewer-info dd { font-weight: 500; }
+.viewer-thumbs { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1.5rem; }
+.viewer-thumbs button {
+    width: 56px;
+    height: 56px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0;
+    background: none;
+}
+.viewer-thumbs button[aria-current="true"] { border-color: var(--ink); }
+.viewer-thumbs img { width: 100%; height: 100%; object-fit: cover; }
+.viewer-close {
+    position: absolute;
+    top: .75rem;
+    right: .75rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0;
+    background: var(--ink);
+    color: #fff;
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* ---------- Process (a real sequence) ---------- */
+.steps {
+    list-style: none;
+    counter-reset: step;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0;
+    border-top: 2px solid var(--ink);
+}
+.steps li {
+    counter-increment: step;
+    padding: 1.5rem 1.25rem 0 0;
+    position: relative;
+}
+.steps li::before {
+    content: counter(step);
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-top: -2.65rem;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    font-family: var(--font-head);
+    font-weight: 700;
+}
+.steps h3 { font-size: 1.1rem; }
+.steps p { margin-top: .35rem; font-size: .95rem; color: var(--ink-soft); line-height: 1.65; }
+
+.sectors {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 2rem;
+    align-items: start;
+}
+.sectors h3 { font-size: 1.35rem; }
+.sector-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+.sector-list li {
+    padding: .4rem .9rem;
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+}
+
+/* ---------- Contact ---------- */
+.contact { background: var(--paper-raised); border-top: 1px solid var(--line); }
+.contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+}
+.contact h2 { font-size: clamp(1.75rem, 3.2vw, 2.5rem); margin-bottom: .9rem; }
+.contact-grid > div > p { color: var(--ink-soft); }
+.contact-phone {
+    display: block;
+    margin: 1.5rem 0 .25rem;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    text-decoration: none;
+    color: var(--green);
+}
+.contact-phone:hover { text-decoration: underline; text-underline-offset: 8px; }
+.contact-details { margin-top: 2rem; }
+.contact-details dt { font-size: .9rem; color: var(--ink-soft); margin-top: 1.1rem; }
+.contact-details dd a { font-weight: 500; }
+.contact-details dd { overflow-wrap: anywhere; }
+
+.quote-form {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: clamp(1.25rem, 3vw, 2.25rem);
+}
+.quote-form h3 { font-size: 1.35rem; }
+.quote-form > p { color: var(--ink-soft); margin-top: .3rem; font-size: .95rem; }
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.1rem;
+    margin-top: 1.5rem;
+}
+.field { display: flex; flex-direction: column; gap: .3rem; }
+.field.full { grid-column: 1 / -1; }
+.field label { font-weight: 500; font-size: .95rem; }
+.field label .opt { font-weight: 400; color: var(--ink-soft); font-size: .85rem; }
+.field input, .field select, .field textarea {
+    width: 100%;
+    min-width: 0;
+    font: inherit;
+    font-size: 1rem;
+    padding: .7rem .85rem;
+    border: 1.5px solid var(--line);
+    border-radius: 5px;
+    background: var(--paper-raised);
+    color: var(--ink);
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+    outline: none;
+    border-color: var(--green);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(19, 160, 140, .25);
+}
+.field textarea { min-height: 120px; resize: vertical; }
+.form-actions { margin-top: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+.form-status { font-size: .95rem; }
+.form-status.ok { color: var(--green); font-weight: 500; }
+.form-status.err { color: #B32D22; font-weight: 500; }
+
+.show-more {
+    display: block;
+    margin: 2rem auto 0;
+    padding: .8rem 1.6rem;
+    border: 1.5px solid rgba(255, 255, 255, .5);
+    border-radius: 6px;
+    background: transparent;
+    color: #fff;
+    font-family: var(--font-head);
+    font-weight: 600;
+    cursor: pointer;
+}
+.show-more:hover { background: #fff; color: var(--ink); }
+.show-more[hidden] { display: none; }
+
+/* Call bar, phones only */
+.call-bar { display: none; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+    background: var(--ink);
+    color: #B9C7C5;
+    padding: 3rem 0 2rem;
+    font-size: .95rem;
+}
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem 3rem;
+}
+.footer-row strong { color: #fff; font-family: var(--font-head); font-weight: 600; }
+.footer-row a { color: #fff; }
+.footer-bottom {
+    margin-top: 2.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    font-size: .85rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1020px) {
+    .main-nav {
+        position: fixed;
+        inset: 72px 0 auto 0;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+        padding: 1rem var(--gutter) 1.5rem;
+        display: none;
+    }
+    .main-nav.open { display: block; }
+    .main-nav ul { flex-direction: column; align-items: stretch; gap: 0; }
+    .main-nav li a { display: block; padding: .8rem 0; border-bottom: 1px solid var(--line); }
+    .main-nav li:last-child a { display: flex; border-bottom: 0; margin-top: 1rem; justify-content: center; }
+    .nav-toggle { display: block; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-photo { aspect-ratio: 16 / 10; }
+    .pipe-band a { min-height: 56px; padding: .6rem 1.1rem .6rem .5rem; font-size: .875rem; }
+    .steps { grid-template-columns: 1fr; border-top: 0; border-left: 2px solid var(--ink); margin-left: 1.1rem; }
+    .steps li { padding: 0 0 1.75rem 1.75rem; }
+    .steps li::before { position: absolute; left: -1.2rem; top: 0; margin: 0; }
+    .sectors, .contact-grid { grid-template-columns: minmax(0, 1fr); }
+    .viewer[open] { grid-template-columns: 1fr; overflow-y: auto; }
+    .viewer-stage { height: auto; aspect-ratio: 4 / 3; }
+}
+@media (max-width: 640px) {
+    .brand-name { display: none; }
+    .service { grid-template-columns: 6px minmax(0, 1fr); gap: .5rem 1.25rem; }
+    .service > div:last-child { grid-column: 2; }
+    .form-grid { grid-template-columns: minmax(0, 1fr); }
+    .pipe-band { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 4px; }
+    .pipe-band a, .pipe-band a:first-child { margin-left: 0; padding: .6rem 1.25rem .6rem .9rem; clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%); }
+    .pipe-band a:last-child { grid-column: 1 / -1; }
+    .pipe-band a span, .pipe-band a:first-child span { padding-left: 0; }
+    .call-bar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 90;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: .5rem;
+        padding: .6rem 16px calc(.6rem + env(safe-area-inset-bottom));
+        background: rgba(15, 43, 44, .96);
+    }
+    .call-bar .btn { justify-content: center; padding: .7rem .4rem; font-size: .9rem; white-space: nowrap; }
+    .call-bar .btn-ghost { border-color: #fff; color: #fff; }
+    .site-footer { padding-bottom: 6rem; }
+    .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+    .project-body { padding: .7rem .75rem .85rem; }
+    .project-body h3 { font-size: .95rem; }
+    .project-body p { display: none; }
+    .hero-actions .btn { flex: 1 1 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hero-photo img { animation: none; }
+    * { transition: none !important; }
+}
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav" id="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <img src="data/logo4_nobg.png" alt="AUDOMVIT - The Pump Expert" class="logo-img">
-            </a>
-            
-            <ul class="nav-links">
+<a class="skip" href="#main">ข้ามไปยังเนื้อหา</a>
+
+<header class="site-header">
+    <div class="wrap header-row">
+        <a class="brand" href="#top" aria-label="อุดมวิศว์ ซัพพลาย หน้าแรก">
+            <img src="data/logo4_nobg.png" alt="" width="78" height="38">
+            <span class="brand-name">อุดมวิศว์ ซัพพลาย<small>Audomvit Supply Co., Ltd.</small></span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="เปิดเมนู"><span></span></button>
+        <nav class="main-nav" id="main-nav" aria-label="เมนูหลัก">
+            <ul>
                 <li><a href="#services">บริการ</a></li>
-                <li><a href="#brands">แบรนด์ปั้มน้ำ</a></li>
-                <li><a href="#portfolio">ผลงาน</a></li>
-                <li><a href="#why-us">ทำไมต้องเรา</a></li>
-                <li><a href="#industries">กลุ่มลูกค้า</a></li>
+                <li><a href="#projects">ผลงาน</a></li>
+                <li><a href="#process">ขั้นตอนการทำงาน</a></li>
                 <li><a href="#contact">ติดต่อ</a></li>
+                <li><a class="btn btn-primary header-call" href="tel:+66863929190">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+                    086-392-9190</a></li>
             </ul>
-            
-            <a href="#contact" class="nav-cta">ขอใบเสนอราคา</a>
-            
-            <button class="mobile-menu-btn" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        </nav>
+    </div>
+</header>
+
+<main id="main">
+    <section class="hero" id="top">
+        <div class="hero-text">
+            <h1><span>งานปั๊ม โบลเวอร์</span> <span>และระบบท่อ</span> <span>สำหรับโรงงาน</span> <span>และอาคาร</span></h1>
+            <p class="hero-lede">จำหน่าย ติดตั้ง และซ่อมบำรุง (Overhaul) ปั๊มน้ำ Blower &amp; Vacuum pump ระบบท่อ และ Fire pump พร้อม Commissioning &amp; Test run โดยทีมช่างของเราเอง ตั้งแต่โรงงานในไทยไปจนถึงลาวและกัมพูชา</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="#contact">ติดต่อสอบถาม</a>
+                <a class="btn btn-ghost" href="#projects">ดูผลงาน 32 โครงการ</a>
+            </div>
         </div>
+        <figure class="hero-photo">
+            <img src="images/img95.jpg" alt="ห้องปั๊มที่ติดตั้งปั๊ม VARISCO แนวตั้งหลายชุด พร้อมท่อและวาล์ว" width="1477" height="1049" fetchpriority="high">
+            <figcaption>ติดตั้งปั๊ม VARISCO 12 ชุด ที่มหาวิทยาลัยเชียงใหม่</figcaption>
+        </figure>
+    </section>
+
+    <nav class="pipe-band" aria-label="ประเภทงาน">
+        <a class="t-pump" href="#projects" data-jump="pump"><span>ปั๊มน้ำและบูสเตอร์</span></a>
+        <a class="t-blower" href="#projects" data-jump="blower"><span>Blower &amp; Vacuum</span></a>
+        <a class="t-pipe" href="#projects" data-jump="pipe"><span>ระบบท่อและฉนวน</span></a>
+        <a class="t-confined" href="#projects" data-jump="confined"><span>บ่อน้ำเสีย งานอับอากาศ</span></a>
+        <a class="t-fire" href="#projects" data-jump="fire"><span>ระบบดับเพลิง</span></a>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg-shapes">
-            <div class="hero-shape"></div>
-            <div class="hero-shape"></div>
-            <div class="hero-shape"></div>
-        </div>
-        
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">พร้อมให้บริการ 24 ชม.</div>
-                <h1>ผู้เชี่ยวชาญ<br><span>ปั้มน้ำอุตสาหกรรม</span><br>ครบวงจร</h1>
-                <p class="hero-description">
-                    บริษัท อุดมวิศว์ ซัพพลาย จำกัด ให้บริการติดตั้ง ซ่อมบำรุง และจำหน่ายปั้มน้ำสำหรับองค์กร โรงงาน และนิติบุคคล ด้วยทีมงานมืออาชีพและประสบการณ์กว่า 15 ปี
-                </p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                        </svg>
-                        ติดต่อเรา
-                    </a>
-                    <a href="#services" class="btn btn-secondary">
-                        ดูบริการทั้งหมด
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-                
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">15<span>+</span></div>
-                        <div class="stat-label">ปีประสบการณ์</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">500<span>+</span></div>
-                        <div class="stat-label">โปรเจกต์สำเร็จ</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">98<span>%</span></div>
-                        <div class="stat-label">ลูกค้าพึงพอใจ</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="hero-visual">
-                <div class="hero-image-wrapper">
-                    <svg class="hero-image" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="500" height="400" rx="24" fill="#1E3A5F"/>
-
-                        <!-- Large Logo in Center -->
-                        <g transform="translate(150, 100)">
-                            <circle cx="100" cy="100" r="90" fill="#0A2647" opacity="0.5"/>
-                            <circle cx="100" cy="100" r="80" fill="#144272"/>
-                            <path d="M60 130 L60 80 L80 80 L80 65 L140 65 L140 130" fill="#2C74B3"/>
-                            <circle cx="100" cy="98" r="30" fill="none" stroke="#00D4FF" stroke-width="3"/>
-                            <circle cx="100" cy="98" r="15" fill="#00D4FF"/>
-                            <path d="M145 90 L165 98 L145 106" fill="#00D4FF"/>
-                            <path d="M145 65 L165 73 L145 81" fill="#00D4FF" opacity="0.6"/>
-                            <path d="M145 115 L165 123 L145 131" fill="#00D4FF" opacity="0.6"/>
-                        </g>
-
-                        <!-- Pump Illustrations -->
-                        <rect x="40" y="280" width="100" height="80" rx="8" fill="#2C74B3"/>
-                        <circle cx="90" cy="320" r="25" fill="#144272" stroke="#00D4FF" stroke-width="2"/>
-                        <circle cx="90" cy="320" r="12" fill="#0A2647"/>
-
-                        <rect x="160" y="280" width="100" height="80" rx="8" fill="#2C74B3"/>
-                        <circle cx="210" cy="320" r="25" fill="#144272" stroke="#00D4FF" stroke-width="2"/>
-                        <circle cx="210" cy="320" r="12" fill="#0A2647"/>
-
-                        <rect x="280" y="280" width="100" height="80" rx="8" fill="#2C74B3"/>
-                        <circle cx="330" cy="320" r="25" fill="#144272" stroke="#00D4FF" stroke-width="2"/>
-                        <circle cx="330" cy="320" r="12" fill="#0A2647"/>
-
-                        <!-- Flow Lines -->
-                        <path d="M150 320 L155 320" stroke="#00D4FF" stroke-width="2" opacity="0.5"/>
-                        <path d="M270 320 L275 320" stroke="#00D4FF" stroke-width="2" opacity="0.5"/>
-                        <path d="M390 320 L395 320" stroke="#00D4FF" stroke-width="2" opacity="0.5"/>
-
-                        <!-- Text -->
-                        <text x="250" y="55" fill="white" font-family="Outfit" font-size="28" font-weight="700" text-anchor="middle">AUDOMVIT</text>
-                        <text x="250" y="385" fill="#00D4FF" font-family="Outfit" font-size="16" text-anchor="middle">THE PUMP EXPERT</text>
-                    </svg>
-                </div>
-            </div>
+    <section class="clients" aria-label="ลูกค้าที่เคยใช้บริการ">
+        <div class="wrap">
+            <p>ส่วนหนึ่งของลูกค้าที่ไว้วางใจให้เราดูแลงาน</p>
+            <ul class="client-list">
+                <li>Essilor</li>
+                <li>Murata ลำพูน</li>
+                <li>Thai Yazaki</li>
+                <li>Thai Asahi</li>
+                <li>DENSO</li>
+                <li>Luvata</li>
+                <li>โรงพยาบาลพญาไท</li>
+                <li>สยามพารากอน</li>
+                <li>มหาวิทยาลัยเชียงใหม่</li>
+                <li>เทศบาลป่าตอง</li>
+                <li>UNITHAI Shipyard</li>
+            </ul>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="section-container">
-            <div class="section-header fade-in">
-                <span class="section-tag">SERVICES</span>
-                <h2 class="section-title">บริการของเรา</h2>
-                <p class="section-subtitle">
-                    ครบทุกความต้องการด้านระบบปั้มน้ำ ตั้งแต่การออกแบบ ติดตั้ง ไปจนถึงการบำรุงรักษา
-                </p>
+    <section class="section" id="services">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>งานที่เรารับ</h2>
+                <p>ดูแลครบตั้งแต่เลือกอุปกรณ์ ติดตั้ง ทดสอบระบบ ไปจนถึงซ่อมบำรุงเมื่อเครื่องเสื่อมสภาพ ใช้ได้ทั้งแบรนด์จากเอเชียและยุโรป เช่น VARISCO, ANLET และ ShinMaywa</p>
             </div>
-            
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                        </svg>
+            <ul class="service-list">
+                <li class="service t-pump">
+                    <h3>จำหน่ายและติดตั้งปั๊ม<small>End-suction, Split case, Booster, Transfer, Self-priming</small></h3>
+                    <div>
+                        <p>เลือกปั๊มให้ตรงกับอัตราการไหลและแรงดันที่ระบบต้องการ ติดตั้งพร้อมตู้ควบคุม ถังแรงดัน และงานท่อ แล้วทดสอบเดินเครื่องก่อนส่งมอบ</p>
+                        <ul>
+                            <li>รื้อถอนปั๊มและมอเตอร์ชุดเดิม แล้วติดตั้งชุดใหม่</li>
+                            <li>ระบบบูสเตอร์และควบคุมแรงดันสำหรับอาคารสูง</li>
+                        </ul>
+                        <a class="see-work" href="#projects" data-jump="pump">ดูงานปั๊มน้ำ</a>
                     </div>
-                    <h3>ติดตั้งระบบปั้มน้ำ</h3>
-                    <p>ออกแบบและติดตั้งระบบปั้มน้ำครบวงจร ตามมาตรฐานวิศวกรรม พร้อมทีมช่างผู้ชำนาญ</p>
-                    <div class="service-features">
-                        <div class="service-feature">
-                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span>สำรวจหน้างานฟรี</span>
-                        </div>
-                        <div class="service-feature">
-                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span>ออกแบบระบบตามความต้องการ</span>
-                        </div>
-                        <div class="service-feature">
-                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span>รับประกันผลงาน</span>
-                        </div>
+                </li>
+                <li class="service t-blower">
+                    <h3>ซ่อมบำรุงและ Overhaul<small>Roots blower, Vacuum pump, มอเตอร์</small></h3>
+                    <div>
+                        <p>ถอดซ่อมทั้งเครื่องที่โรงซ่อมของเรา เปลี่ยนแบริ่งและซีลด้วยอะไหล่มาตรฐาน วัดค่าการสั่นสะเทือนก่อนส่งคืน เคย Overhaul ANLET ให้โรงงานมาแล้วกว่า 20 ชุด</p>
+                        <ul>
+                            <li>ANLET รุ่น CT4-1000LE, CT4-200LE, BE80H, BE150H</li>
+                            <li>ตรวจวัดอุณหภูมิ รอบ และการสั่นสะเทือนด้วยเครื่องมือวัด</li>
+                        </ul>
+                        <a class="see-work" href="#projects" data-jump="blower">ดูงาน Blower &amp; Vacuum</a>
                     </div>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="3"/>
-                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-                        </svg>
+                </li>
+                <li class="service t-pipe">
+                    <h3>ระบบท่อ<small>PPR, Stainless SUS304, ท่อดับเพลิง, Duct, ฉนวน</small></h3>
+                    <div>
+                        <p>เดินท่อน้ำดี น้ำเสีย ประปา และดับเพลิง ทั้งงานใหม่และงานปรับปรุงระบบเก่า รวมถึงหุ้มฉนวนกันความร้อนให้ท่อและ Plate heat exchanger</p>
+                        <a class="see-work" href="#projects" data-jump="pipe">ดูงานระบบท่อ</a>
                     </div>
-                    <h3>ซ่อมบำรุงปั้มน้ำ</h3>
-                    <p>บริการซ่อมแซมและบำรุงรักษาปั้มน้ำทุกยี่ห้อ ทุกรุ่น พร้อมอะไหล่แท้จากโรงงาน</p>
-                    <div class="service-features">
-                        <div class="service-feature">
-                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span>ซ่อมด่วน 24 ชม.</span>
-                        </div>
-                        <div class="service-feature">
-                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span>อะไหล่แท้ทุกยี่ห้อ</span>
-                        </div>
-                        <div class="service-feature">
-                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span>รับประกันหลังซ่อม</span>
-                        </div>
+                </li>
+                <li class="service t-confined">
+                    <h3>ล้างบ่อน้ำเสียและงานอับอากาศ<small>บ่อพัก บ่อดักไขมัน ปั๊มจุ่ม Submersible</small></h3>
+                    <div>
+                        <p>ล้างบ่อ เปลี่ยนวาล์ว ท่อ และลูกลอยในบ่อพัก ติดตั้งปั๊มจุ่มชุดใหม่ ทำงานในพื้นที่อับอากาศด้วยอุปกรณ์ระบายอากาศและอุปกรณ์ป้องกัน</p>
+                        <a class="see-work" href="#projects" data-jump="confined">ดูงานบ่อน้ำเสีย</a>
                     </div>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
+                </li>
+                <li class="service t-fire">
+                    <h3>ระบบดับเพลิงและงานที่ปรึกษา<small>Fire pump, Jockey pump, Commissioning &amp; Test run</small></h3>
+                    <div>
+                        <p>ออกแบบและติดตั้งชุด Fire pump พร้อมเดินท่อดับเพลิง ให้คำปรึกษาและทำ Commissioning &amp; Test run ให้ระบบที่ผู้รับเหมารายอื่นติดตั้ง</p>
+                        <a class="see-work" href="#projects" data-jump="fire">ดูงานระบบดับเพลิง</a>
                     </div>
-                    <h3>สัญญาบำรุงรักษา</h3>
-                    <p>แผนบำรุงรักษาเชิงป้องกัน (PM) ลดค่าใช้จ่ายซ่อมฉุกเฉิน ยืดอายุการใช้งานอุปกรณ์</p>
-                    <div class="service-features">
-                        <div class="service-feature">
-                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span>ตรวจเช็คตามรอบ</span>
-                        </div>
-                        <div class="service-feature">
-                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span>รายงานสถานะอุปกรณ์</span>
-                        </div>
-                        <div class="service-feature">
-                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span>ส่วนลดค่าอะไหล่</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
     </section>
 
-    <!-- Brands Section -->
-    <section class="brands" id="brands">
-        <div class="brands-container">
-            <div class="brands-header fade-in">
-                <h3>แบรนด์ปั้มน้ำที่เราบริการ</h3>
-                <p>ผู้เชี่ยวชาญด้านปั้มน้ำยี่ห้อชั้นนำระดับโลก</p>
+    <section class="section projects" id="projects">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>ผลงานที่ผ่านมา</h2>
+                <p>รูปทั้งหมดถ่ายจากหน้างานจริง เลือกโครงการเพื่อดูรูปและรายละเอียดงาน</p>
             </div>
-
-            <div class="brands-grid">
-                <div class="brand-item fade-in">
-                    <div class="brand-logo">
-                        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="60" height="60" rx="8" fill="#003366"/>
-                            <text x="30" y="38" font-family="Arial" font-size="14" font-weight="bold" fill="white" text-anchor="middle">GRUNDFOS</text>
-                        </svg>
-                    </div>
-                    <div class="brand-name">Grundfos</div>
-                </div>
-
-                <div class="brand-item fade-in">
-                    <div class="brand-logo">
-                        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="60" height="60" rx="8" fill="#E31E24"/>
-                            <text x="30" y="38" font-family="Arial" font-size="18" font-weight="bold" fill="white" text-anchor="middle">ESPA</text>
-                        </svg>
-                    </div>
-                    <div class="brand-name">ESPA</div>
-                </div>
-
-                <div class="brand-item fade-in">
-                    <div class="brand-logo">
-                        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="60" height="60" rx="8" fill="#006633"/>
-                            <text x="30" y="32" font-family="Arial" font-size="16" font-weight="bold" fill="white" text-anchor="middle">CALPEDA</text>
-                        </svg>
-                    </div>
-                    <div class="brand-name">Calpeda</div>
-                </div>
-
-                <div class="brand-item fade-in">
-                    <div class="brand-logo">
-                        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="60" height="60" rx="8" fill="#CC0000"/>
-                            <text x="30" y="38" font-family="Arial" font-size="18" font-weight="bold" fill="white" text-anchor="middle">EBARA</text>
-                        </svg>
-                    </div>
-                    <div class="brand-name">Ebara</div>
-                </div>
-
-                <div class="brand-item fade-in">
-                    <div class="brand-logo">
-                        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="60" height="60" rx="8" fill="#FF6600"/>
-                            <text x="30" y="38" font-family="Arial" font-size="18" font-weight="bold" fill="white" text-anchor="middle">WILO</text>
-                        </svg>
-                    </div>
-                    <div class="brand-name">Wilo</div>
-                </div>
-            </div>
+            <div class="filters" role="group" aria-label="กรองตามประเภทงาน"></div>
+            <div class="project-grid" id="project-grid"></div>
+            <button class="show-more" type="button" aria-controls="project-grid" hidden></button>
+            <p class="ref-download">ต้องการเอกสารอ้างอิงผลงานไว้แนบจัดซื้อ? <a href="data/REF%20ADV.pdf" download>ดาวน์โหลด Reference (PDF, 8 MB)</a></p>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="why-us" id="why-us">
-        <div class="section-container">
-            <div class="section-header fade-in">
-                <span class="section-tag">WHY US</span>
-                <h2 class="section-title">ทำไมต้องเลือกเรา</h2>
-                <p class="section-subtitle">
-                    เราพร้อมเป็นพาร์ทเนอร์ด้านระบบปั้มน้ำที่คุณไว้วางใจได้
-                </p>
-            </div>
-            
-            <div class="why-grid">
-                <div class="why-card fade-in">
-                    <div class="why-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h3>ประสบการณ์กว่า 15 ปี</h3>
-                    <p>ทีมงานมืออาชีพผ่านงานมาแล้วหลากหลายอุตสาหกรรม</p>
-                </div>
-                
-                <div class="why-card fade-in">
-                    <div class="why-icon">
-                        <svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
-                        </svg>
-                    </div>
-                    <h3>บริการรวดเร็ว</h3>
-                    <p>ทีมช่างพร้อมออกบริการ ตอบสนองทุกปัญหาเร่งด่วน</p>
-                </div>
-                
-                <div class="why-card fade-in">
-                    <div class="why-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
-                        </svg>
-                    </div>
-                    <h3>มาตรฐานสูง</h3>
-                    <p>ทำงานตามมาตรฐานวิศวกรรม รับประกันคุณภาพ</p>
-                </div>
-                
-                <div class="why-card fade-in">
-                    <div class="why-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <h3>ทีมงานเชี่ยวชาญ</h3>
-                    <p>วิศวกรและช่างผู้ชำนาญพร้อมให้คำปรึกษา</p>
-                </div>
-            </div>
+    <dialog class="viewer" aria-labelledby="viewer-title">
+        <button class="viewer-close" aria-label="ปิด">&times;</button>
+        <div class="viewer-stage">
+            <img alt="">
+            <button class="viewer-nav prev" aria-label="รูปก่อนหน้า">&lsaquo;</button>
+            <button class="viewer-nav next" aria-label="รูปถัดไป">&rsaquo;</button>
         </div>
-    </section>
-
-    <!-- Industries Section -->
-    <section class="industries" id="industries">
-        <div class="section-container">
-            <div class="industries-content">
-                <div class="industries-text fade-in">
-                    <span class="section-tag">OUR CLIENTS</span>
-                    <h2>ให้บริการลูกค้าองค์กร<br>และนิติบุคคล</h2>
-                    <p>
-                        เราเชี่ยวชาญในการให้บริการระบบปั้มน้ำสำหรับธุรกิจและองค์กรขนาดใหญ่ ไม่ใช่งานตามบ้านเรือน เพื่อตอบโจทย์ความต้องการเฉพาะทางของแต่ละอุตสาหกรรม
-                    </p>
-                    
-                    <div class="industry-list">
-                        <div class="industry-item">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <rect x="4" y="2" width="16" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
-                                <path d="M9 6h6M9 10h6M9 14h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                            <span>อาคารสำนักงาน</span>
-                        </div>
-                        <div class="industry-item">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M3 21h18M5 21V7l8-4 8 4v14M9 21v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>โรงงานอุตสาหกรรม</span>
-                        </div>
-                        <div class="industry-item">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                            <span>คอนโดมิเนียม</span>
-                        </div>
-                        <div class="industry-item">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>ศูนย์การค้า</span>
-                        </div>
-                        <div class="industry-item">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>โรงพยาบาล</span>
-                        </div>
-                        <div class="industry-item">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M9 22V12h6v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>หมู่บ้านจัดสรร</span>
-                        </div>
-                        <div class="industry-item">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                            <span>โรงแรม / รีสอร์ท</span>
-                        </div>
-                        <div class="industry-item">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>สถานศึกษา</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="industries-visual fade-in">
-                    <svg class="industries-image" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="500" height="400" rx="24" fill="#E2E8F0"/>
-                        <rect x="50" y="100" width="120" height="200" rx="8" fill="#0A2647"/>
-                        <rect x="60" y="120" width="30" height="25" rx="4" fill="#2C74B3"/>
-                        <rect x="100" y="120" width="30" height="25" rx="4" fill="#2C74B3"/>
-                        <rect x="140" y="120" width="20" height="25" rx="4" fill="#2C74B3"/>
-                        <rect x="60" y="155" width="30" height="25" rx="4" fill="#2C74B3"/>
-                        <rect x="100" y="155" width="30" height="25" rx="4" fill="#2C74B3"/>
-                        <rect x="140" y="155" width="20" height="25" rx="4" fill="#2C74B3"/>
-                        <rect x="60" y="190" width="30" height="25" rx="4" fill="#2C74B3"/>
-                        <rect x="100" y="190" width="30" height="25" rx="4" fill="#2C74B3"/>
-                        <rect x="140" y="190" width="20" height="25" rx="4" fill="#2C74B3"/>
-                        <rect x="60" y="225" width="30" height="25" rx="4" fill="#2C74B3"/>
-                        <rect x="100" y="225" width="30" height="25" rx="4" fill="#2C74B3"/>
-                        <rect x="140" y="225" width="20" height="25" rx="4" fill="#2C74B3"/>
-                        <rect x="90" y="260" width="40" height="40" rx="4" fill="#144272"/>
-                        <rect x="200" y="150" width="150" height="150" rx="8" fill="#144272"/>
-                        <path d="M200 200 L275 150 L350 200" fill="#0A2647"/>
-                        <rect x="220" y="210" width="40" height="50" rx="4" fill="#2C74B3"/>
-                        <rect x="280" y="210" width="50" height="90" rx="4" fill="#00D4FF" opacity="0.5"/>
-                        <circle cx="305" cy="250" r="15" fill="#00D4FF"/>
-                        <rect x="380" y="180" width="80" height="120" rx="8" fill="#205295"/>
-                        <rect x="390" y="200" width="25" height="20" rx="2" fill="#00D4FF" opacity="0.6"/>
-                        <rect x="425" y="200" width="25" height="20" rx="2" fill="#00D4FF" opacity="0.6"/>
-                        <rect x="390" y="230" width="25" height="20" rx="2" fill="#00D4FF" opacity="0.6"/>
-                        <rect x="425" y="230" width="25" height="20" rx="2" fill="#00D4FF" opacity="0.6"/>
-                        <rect x="405" y="260" width="30" height="40" rx="4" fill="#0A2647"/>
-                        <rect x="30" y="300" width="440" height="8" rx="4" fill="#CBD5E1"/>
-                        <circle cx="400" cy="80" r="40" fill="#FFD93D" opacity="0.3"/>
-                        <circle cx="400" cy="80" r="25" fill="#FFD93D"/>
-                    </svg>
-                    
-                    <div class="floating-badge badge-1">
-                        <div class="badge-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                <polyline points="22 4 12 14.01 9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="badge-text">
-                            <strong>500+</strong>
-                            <span>โปรเจกต์สำเร็จ</span>
-                        </div>
-                    </div>
-                    
-                    <div class="floating-badge badge-2">
-                        <div class="badge-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2"/>
-                                <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2"/>
-                                <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="badge-text">
-                            <strong>15+</strong>
-                            <span>ปีประสบการณ์</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="viewer-info">
+            <div class="cat"></div>
+            <h3 id="viewer-title"></h3>
+            <dl></dl>
+            <div class="viewer-thumbs"></div>
         </div>
-    </section>
+    </dialog>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <div class="section-container">
-            <div class="section-header fade-in">
-                <span class="section-tag">PORTFOLIO</span>
-                <h2 class="section-title">ผลงานของเรา</h2>
-                <p class="section-subtitle">
-                    ตัวอย่างผลงานการติดตั้งและซ่อมบำรุงระบบปั้มน้ำของเรา
-                </p>
+    <section class="section" id="process">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>ขั้นตอนการทำงาน</h2>
+                <p>ทุกงานผ่านขั้นตอนเดียวกัน คุณจึงรู้ล่วงหน้าว่าจะได้อะไรและเมื่อไร</p>
             </div>
+            <ol class="steps">
+                <li><h3>สำรวจหน้างาน</h3><p>ดูสภาพระบบเดิม วัดค่า และสอบถามปัญหาที่เกิดขึ้น</p></li>
+                <li><h3>เสนอแนวทางและราคา</h3><p>เลือกอุปกรณ์และวิธีแก้ที่เหมาะกับงบประมาณ พร้อมใบเสนอราคา</p></li>
+                <li><h3>ติดตั้งหรือซ่อม</h3><p>ทีมช่างของเราลงมือเอง วางแผนให้กระทบการเดินเครื่องน้อยที่สุด</p></li>
+                <li><h3>Commissioning &amp; Test run</h3><p>ทดสอบเดินระบบจริง ตรวจค่าแรงดัน กระแส และการสั่นสะเทือน</p></li>
+                <li><h3>ส่งมอบและดูแลต่อ</h3><p>ส่งมอบงานพร้อมรูปและรายงาน รับดูแลบำรุงรักษาตามรอบ</p></li>
+            </ol>
 
-            <div class="portfolio-grid">
-                <div class="portfolio-item fade-in">
-                    <img src="images/img73.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ติดตั้งปั้มน้ำอุตสาหกรรม</h4>
-                        <p>โรงงานอุตสาหกรรมขนาดใหญ่</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img76.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ระบบปั้มน้ำดับเพลิง</h4>
-                        <p>อาคารสำนักงานสูง</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img77.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ปั้มน้ำบํารุงรักษา</h4>
-                        <p>คอนโดมิเนียม</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img78.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ติดตั้งปั้มน้ำ GRUNDFOS</h4>
-                        <p>ศูนย์การค้า</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img79.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ระบบประปาหมู่บ้าน</h4>
-                        <p>โครงการหมู่บ้านจัดสรร</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img80.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ปั้มน้ำ EBARA</h4>
-                        <p>โรงแรม</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img83.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ซ่อมบำรุงปั้มน้ำ</h4>
-                        <p>โรงพยาบาล</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img84.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ติดตั้งระบบปั้มน้ำ</h4>
-                        <p>อาคารพาณิชย์</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img85.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ปั้มน้ำ WILO</h4>
-                        <p>สถานศึกษา</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img86.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ระบบบำบัดน้ำ</h4>
-                        <p>โรงงานอุตสาหกรรม</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img89.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ปั้มน้ำ CALPEDA</h4>
-                        <p>อาคารสูง</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img90.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ซ่อมบำรุงปั้มน้ำ</h4>
-                        <p>หมู่บ้านจัดสรร</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img91.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ติดตั้งปั้มน้ำ ESPA</h4>
-                        <p>รีสอร์ท</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img92.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ระบบปัํมน้ำ</h4>
-                        <p>คอนโดมิเนียม</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img95.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ปั้มน้ำอุตสาหกรรม</h4>
-                        <p>โรงงาน</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img98.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ซ่อมบำรุงปั้มน้ำ</h4>
-                        <p>อาคารพาณิชย์</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img99.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ติดตั้งปั้มน้ำ</h4>
-                        <p>ศูนย์การค้า</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img100.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ระบบปั้มน้ำดับเพลิง</h4>
-                        <p>โรงแรม</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img103.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ปั้มน้ำ GRUNDFOS</h4>
-                        <p>อาคารสำนักงาน</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <img src="images/img104.jpg" alt="ผลงานปั้มน้ำ">
-                    <div class="portfolio-overlay">
-                        <h4>ซ่อมบำรุง</h4>
-                        <p>โรงงานอุตสาหกรรม</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="section-container">
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h2>ติดต่อเรา</h2>
-                    <p>พร้อมให้คำปรึกษาและบริการ ติดต่อเราได้ทุกช่องทาง</p>
-                    
-                    <div class="contact-detail">
-                        <div class="contact-detail-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="contact-detail-text">
-                            <h4>ที่อยู่</h4>
-                            <p>1174/1 ถนนมาเจริญ แขวงหนองแขม เขตหนองแขม กรุงเทพมหานคร 10160</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-detail">
-                        <div class="contact-detail-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="contact-detail-text">
-                            <h4>โทรศัพท์</h4>
-                            <p><a href="tel:+66863929190">086-392-9190</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-detail">
-                        <div class="contact-detail-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
-                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="contact-detail-text">
-                            <h4>อีเมล</h4>
-                            <p><a href="mailto:ananchai_s@audomvit.com">ananchai_s@audomvit.com</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-detail">
-                        <div class="contact-detail-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                <polyline points="12 6 12 12 16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <div class="contact-detail-text">
-                            <h4>เวลาทำการ</h4>
-                            <p>จันทร์ - เสาร์: 08:00 - 17:00 น.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="LINE">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 5.82 2 10.5c0 4.16 3.58 7.64 8.44 8.36.33.07.78.22.89.51.1.26.07.67.03.93l-.14.87c-.04.27-.2 1.05.92.57 1.12-.48 6.05-3.56 8.25-6.1C21.94 13.64 22 12.1 22 10.5 22 5.82 17.52 2 12 2z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <h3>ส่งข้อความถึงเรา</h3>
-                    <p>กรอกข้อมูลด้านล่าง เราจะติดต่อกลับโดยเร็วที่สุด</p>
-                    
-                    <form id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">ชื่อ-นามสกุล *</label>
-                                <input type="text" id="name" name="name" required placeholder="ชื่อของคุณ">
-                            </div>
-                            <div class="form-group">
-                                <label for="company">บริษัท/องค์กร *</label>
-                                <input type="text" id="company" name="company" required placeholder="ชื่อบริษัท">
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">อีเมล *</label>
-                                <input type="email" id="email" name="email" required placeholder="email@company.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">เบอร์โทรศัพท์ *</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="0X-XXX-XXXX">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service">บริการที่สนใจ</label>
-                            <select id="service" name="service">
-                                <option value="">-- เลือกบริการ --</option>
-                                <option value="install">ติดตั้งระบบปั้มน้ำ</option>
-                                <option value="repair">ซ่อมบำรุงปั้มน้ำ</option>
-                                <option value="maintenance">สัญญาบำรุงรักษา (PM)</option>
-                                <option value="consult">ขอคำปรึกษา</option>
-                                <option value="other">อื่น ๆ</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">รายละเอียด</label>
-                            <textarea id="message" name="message" placeholder="กรุณาระบุรายละเอียดเพิ่มเติม เช่น ประเภทอาคาร ขนาดพื้นที่ ปัญหาที่พบ เป็นต้น"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-submit">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="22" y1="2" x2="11" y2="13"/>
-                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-                            </svg>
-                            ส่งข้อความ
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="#" class="logo">
-                    <img src="data/logo4_nobg.png" alt="AUDOMVIT - The Pump Expert" class="logo-img" style="height: 55px;">
-                </a>
-                <p>
-                    บริษัท อุดมวิศว์ ซัพพลาย จำกัด ผู้เชี่ยวชาญด้านระบบปั้มน้ำอุตสาหกรรม ให้บริการติดตั้ง ซ่อมบำรุง และจำหน่ายปั้มน้ำสำหรับองค์กรและนิติบุคคล
-                </p>
-            </div>
-            
-            <div class="footer-column">
-                <h4>บริการ</h4>
-                <ul class="footer-links">
-                    <li><a href="#services">ติดตั้งระบบปั้มน้ำ</a></li>
-                    <li><a href="#services">ซ่อมบำรุงปั้มน้ำ</a></li>
-                    <li><a href="#services">สัญญาบำรุงรักษา</a></li>
-                    <li><a href="#contact">ขอใบเสนอราคา</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h4>กลุ่มลูกค้า</h4>
-                <ul class="footer-links">
-                    <li><a href="#industries">อาคารสำนักงาน</a></li>
-                    <li><a href="#industries">โรงงานอุตสาหกรรม</a></li>
-                    <li><a href="#industries">คอนโดมิเนียม</a></li>
-                    <li><a href="#industries">ศูนย์การค้า</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h4>ติดต่อ</h4>
-                <ul class="footer-links">
-                    <li><a href="tel:+66XXXXXXXX">02-XXX-XXXX</a></li>
-                    <li><a href="mailto:info@audomvit.com">info@audomvit.com</a></li>
-                    <li><a href="https://audomvit.com">audomvit.com</a></li>
+            <div class="sectors">
+                <h3>ลูกค้าของเราเป็นองค์กรและนิติบุคคล</h3>
+                <ul class="sector-list">
+                    <li>โรงงานอุตสาหกรรม</li>
+                    <li>โรงพยาบาล</li>
+                    <li>ศูนย์การค้า</li>
+                    <li>อาคารสำนักงานและคอนโด</li>
+                    <li>สถานศึกษา</li>
+                    <li>หน่วยงานราชการและเทศบาล</li>
+                    <li>โรงไฟฟ้าและโรงบำบัดน้ำเสีย</li>
+                    <li>โรงแรมและสถานบันเทิง</li>
                 </ul>
             </div>
         </div>
-        
-        <div class="footer-bottom">
-            <p>2025 บริษัท อุดมวิศว์ ซัพพลาย จำกัด. All rights reserved.</p>
-            <p>Designed for audomvit.com</p>
+    </section>
+
+    <section class="section contact" id="contact">
+        <div class="wrap contact-grid">
+            <div>
+                <h2>คุยรายละเอียดงานกับเรา</h2>
+                <p>โทรมาเล่าอาการเครื่องหรือส่งแบบมาให้ดูได้เลย ถ้าต้องดูหน้างาน เรานัดสำรวจให้</p>
+                <a class="contact-phone" href="tel:+66863929190">086-392-9190</a>
+                <dl class="contact-details">
+                    <dt>อีเมล</dt>
+                    <dd><a href="mailto:ananchai_s@audomvit.com">ananchai_s@audomvit.com</a></dd>
+                    <dt>ที่อยู่</dt>
+                    <dd>1174/1 ถนนมาเจริญ แขวงหนองแขม เขตหนองแขม กรุงเทพฯ 10160<br>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=1174%2F1+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%A1%E0%B8%B2%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D+%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%A1" target="_blank" rel="noopener">เปิดใน Google Maps</a></dd>
+                    <dt>เวลาทำการ</dt>
+                    <dd>จันทร์ถึงเสาร์ 08:00–17:00 น.</dd>
+                </dl>
+            </div>
+
+            <form class="quote-form" id="quote-form" novalidate>
+                <h3>ติดต่อสอบถาม</h3>
+                <p>กรอกข้อมูลไว้ ทีมงานจะติดต่อกลับเพื่อสอบถามรายละเอียดงาน</p>
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="f-name">ชื่อผู้ติดต่อ</label>
+                        <input id="f-name" name="name" autocomplete="name" required>
+                    </div>
+                    <div class="field">
+                        <label for="f-company">บริษัทหรือหน่วยงาน</label>
+                        <input id="f-company" name="company" autocomplete="organization" required>
+                    </div>
+                    <div class="field">
+                        <label for="f-phone">เบอร์โทร</label>
+                        <input id="f-phone" name="phone" type="tel" autocomplete="tel" required>
+                    </div>
+                    <div class="field">
+                        <label for="f-email">อีเมล <span class="opt">(ไม่บังคับ)</span></label>
+                        <input id="f-email" name="email" type="email" autocomplete="email">
+                    </div>
+                    <div class="field full">
+                        <label for="f-service">ประเภทงาน</label>
+                        <select id="f-service" name="service">
+                            <option>จำหน่ายและติดตั้งปั๊ม</option>
+                            <option>ซ่อมบำรุง / Overhaul Blower &amp; Vacuum</option>
+                            <option>ระบบท่อและฉนวน</option>
+                            <option>ล้างบ่อน้ำเสีย / งานอับอากาศ</option>
+                            <option>ระบบดับเพลิง / Fire pump</option>
+                            <option>ปรึกษา / Commissioning &amp; Test run</option>
+                            <option>อื่น ๆ</option>
+                        </select>
+                    </div>
+                    <div class="field full">
+                        <label for="f-message">รายละเอียดงาน</label>
+                        <textarea id="f-message" name="message" placeholder="เช่น ยี่ห้อและรุ่นเครื่อง อาการที่พบ จำนวนชุด สถานที่"></textarea>
+                    </div>
+                </div>
+                <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+                <div class="form-actions">
+                    <button class="btn btn-primary" type="submit">ส่งข้อความ</button>
+                    <p class="form-status" role="status" aria-live="polite"></p>
+                </div>
+            </form>
         </div>
-    </footer>
+    </section>
+</main>
 
-    <script>
-        // Navigation scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+<footer class="site-footer">
+    <div class="wrap">
+        <div class="footer-row">
+            <div>
+                <strong>บริษัท อุดมวิศว์ ซัพพลาย จำกัด</strong><br>
+                1174/1 ถนนมาเจริญ แขวงหนองแขม เขตหนองแขม กรุงเทพฯ 10160
+            </div>
+            <div>
+                โทร <a href="tel:+66863929190">086-392-9190</a><br>
+                <a href="mailto:ananchai_s@audomvit.com">ananchai_s@audomvit.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; <span id="year">2026</span> Audomvit Supply Co., Ltd.</div>
+    </div>
+</footer>
+
+<div class="call-bar">
+    <a class="btn btn-primary" href="tel:+66863929190">โทร 086-392-9190</a>
+    <a class="btn btn-ghost" href="#contact">ติดต่อสอบถาม</a>
+</div>
+
+<script>
+/*
+ * ผลงาน: เพิ่มโครงการใหม่ได้ที่นี่ (ใส่รูปไว้ในโฟลเดอร์ images/)
+ * cat: pump | blower | pipe | confined | fire
+ */
+const CATEGORIES = {
+    pump: 'ปั๊มน้ำและบูสเตอร์',
+    blower: 'Blower & Vacuum',
+    pipe: 'ระบบท่อและฉนวน',
+    confined: 'บ่อน้ำเสีย งานอับอากาศ',
+    fire: 'ระบบดับเพลิง'
+};
+
+const PROJECTS = [
+    { cat: 'pump', client: 'มหาวิทยาลัยเชียงใหม่', work: 'ติดตั้งปั๊ม VARISCO รุ่น JS2-120G10 จำนวน 12 ชุด', via: 'บ.ขวัญรวี จำกัด', imgs: [95] },
+    { cat: 'pump', client: 'เทศบาลป่าตอง จ.ภูเก็ต', work: 'ติดตั้งปั๊ม VARISCO รุ่น ST-R4TWGS จำนวน 6 ชุด', imgs: [73] },
+    { cat: 'pump', client: 'โรงกำจัดขยะ จ.สระบุรี', work: 'ระบบบำบัดน้ำเสีย: ขายพร้อมติดตั้ง Blower, Self-priming และ Centrifugal pump', imgs: [76, 77, 78, 79, 80] },
+    { cat: 'pump', client: 'โรงงาน Essilor', work: 'Split case centrifugal pump ระบบ Cooling: ติดตั้งชุดใหม่และรับชุดเก่ามาซ่อมบำรุง', imgs: [83, 84, 85, 86] },
+    { cat: 'pump', client: 'โรงไฟฟ้า เวียงจันทน์ สปป.ลาว', work: 'จำหน่ายพร้อม Test run: Blower, End-suction และ Booster pump', via: 'GOSHU KOHSAN', imgs: [89, 90, 91, 92] },
+    { cat: 'pump', client: 'เกาะกง ประเทศกัมพูชา', work: 'ขายพร้อมติดตั้ง Booster pump 2 ชุด ให้โรงแรมและคาสิโน', imgs: [103, 104, 105, 106] },
+    { cat: 'pump', client: 'พญาไท คอมเพล็กซ์', work: 'ขายพร้อมติดตั้ง Transfer pump และเดินท่อ PPR', imgs: [98, 99, 100] },
+    { cat: 'pump', client: 'Paradise Park', work: 'รื้อถอนชุดเดิมและติดตั้ง Booster pump ชุดใหม่', imgs: [127, 128, 129, 130, 131] },
+    { cat: 'pump', client: 'Thai Asahi', work: 'รื้อถอนและติดตั้ง Pump และ Motor พร้อม Commissioning & Test run', imgs: [114, 115] },
+    { cat: 'pump', client: 'โรงเรียนเตรียมอุดมศึกษา', work: 'รื้อถอนและติดตั้ง Pump และ Motor พร้อม Commissioning & Test run', imgs: [118, 119] },
+    { cat: 'blower', client: 'Murata ลำพูน', work: 'ซ่อม Vacuum pump ANLET จำนวน 12 ชุด', imgs: [176, 177, 178, 179] },
+    { cat: 'blower', client: 'Luvata Heating', work: 'Overhaul Vacuum pump ANLET รุ่น CT4-1000LE จำนวน 4 ชุด พร้อมติดตั้ง', imgs: [170, 171, 172, 173] },
+    { cat: 'blower', client: 'โรงงาน Kaihara', work: 'Overhaul Blower ANLET รุ่น BE150H จำนวน 3 ชุด', imgs: [187, 188, 189] },
+    { cat: 'blower', client: 'โรงงาน Daika', work: 'Overhaul Vacuum ANLET รุ่น CT4-200LE', imgs: [182, 183, 184] },
+    { cat: 'blower', client: 'Thai Yazaki', work: 'ขายพร้อมติดตั้ง Blower ANLET รุ่น BE80H และตรวจวัดการสั่นสะเทือน', imgs: [109, 110, 111] },
+    { cat: 'pipe', client: 'วังสวนกุหลาบ', work: 'เดินท่อ Stainless พร้อมติดตั้งชุดปั๊มควบคุมแรงดันของระบบ', imgs: [200, 201, 202, 203] },
+    { cat: 'pipe', client: 'โรงพยาบาลพญาไท 3', work: 'เปลี่ยนท่อเก่าเป็นท่อ PPR ทั้งหมดของชั้นใต้ดิน', imgs: [210, 211, 212] },
+    { cat: 'pipe', client: 'โรงพยาบาลพญาไท', work: 'ปรับปรุงท่อเก่าเป็นท่อ PPR ที่ชั้น 24', imgs: [215, 216, 217] },
+    { cat: 'pipe', client: 'โรงพยาบาลพญาไท', work: 'เดินท่อ Duct ภายนอกอาคารสูง', imgs: [229, 230, 231, 232, 233, 234] },
+    { cat: 'pipe', client: 'สยามพารากอน', work: 'เดินท่อระบบใหม่ด้วยท่อ PPR ที่ชั้นใต้ดิน', imgs: [220, 221, 222] },
+    { cat: 'pipe', client: 'สยามพารากอน', work: 'หุ้มฉนวน Plate heat exchanger จำนวน 4 ชุด', imgs: [206, 207] },
+    { cat: 'pipe', client: 'Essilor', work: 'รื้อถอนและติดตั้งปั๊ม พร้อมเดินท่อ SUS304', imgs: [122, 123, 124] },
+    { cat: 'pipe', client: 'Thai Asahi', work: 'ติดตั้งปั๊มและหุ้มฉนวนท่อ', imgs: [225, 226] },
+    { cat: 'confined', client: 'ห้างเสรีไทย คอมเพล็กซ์', work: 'ล้างบ่อน้ำเสียภายนอกอาคาร พร้อมติดตั้งปั๊ม Submersible ShinMaywa', imgs: [144, 146, 145] },
+    { cat: 'confined', client: 'ห้างเสรีไทย คอมเพล็กซ์', work: 'ล้างบ่อดักไขมัน ตัดต่อเปลี่ยนวาล์วและท่อในบ่อพัก ติดตั้ง Submersible pump', imgs: [149, 150, 151, 152, 153] },
+    { cat: 'confined', client: 'DENSO', work: 'เปลี่ยนลูกลอยและตรวจตู้ควบคุมปั๊ม Submersible ในพื้นที่อับอากาศ', imgs: [156, 157, 158, 159] },
+    { cat: 'fire', client: 'โรงพยาบาลเอกชัย', work: 'ติดตั้ง Fire pump พร้อม Commissioning & Test run', imgs: [245] },
+    { cat: 'fire', client: 'กองบิน จ.ลพบุรี', work: 'ออกแบบและติดตั้ง Fire pump พร้อมเดินท่อดับเพลิง และ Commissioning & Test run', imgs: [260, 261, 262, 263, 264, 265, 266] },
+    { cat: 'fire', client: 'บริษัท สยามมัลติ คอน จำกัด', work: 'ติดตั้ง Fire pump 1 ชุด พร้อม Commissioning & Test run', imgs: [257, 256] },
+    { cat: 'fire', client: 'UNITHAI Shipyard', work: 'ออกแบบระบบดับเพลิง ให้คำปรึกษา และ Commissioning & Test run', imgs: [252, 253] },
+    { cat: 'fire', client: 'สยามพารากอน', work: 'ปรับปรุงท่อดับเพลิงที่ชั้นใต้ดิน', imgs: [248, 249] },
+    { cat: 'fire', client: 'ชุด Fire pump เครื่องยนต์ดีเซล', work: 'ติดตั้ง Fire pump พร้อม Jockey pump และทดสอบฉีดน้ำ', imgs: [270, 269, 271, 272, 273] }
+];
+
+const img = n => `images/img${n}.jpg`;
+const thumb = n => `images/thumbs/img${n}.jpg`;
+const INITIAL_SHOWN = 12;
+
+/* ----- Render project grid and filters ----- */
+const grid = document.querySelector('.project-grid');
+const filterBar = document.querySelector('.filters');
+
+PROJECTS.forEach((p, i) => {
+    const card = document.createElement('button');
+    card.type = 'button';
+    card.className = `project t-${p.cat}`;
+    card.dataset.cat = p.cat;
+    card.dataset.index = i;
+    card.innerHTML = `
+        <div class="project-img">
+            <img src="${thumb(p.imgs[0])}" alt="" loading="lazy" decoding="async">
+            ${p.imgs.length > 1 ? `<span class="n-photos">${p.imgs.length} รูป</span>` : ''}
+        </div>
+        <div class="project-body"><h3></h3><p></p></div>`;
+    card.querySelector('h3').textContent = p.client;
+    card.querySelector('p').textContent = p.work;
+    grid.appendChild(card);
+});
+
+const filters = [['all', 'ทั้งหมด'], ...Object.entries(CATEGORIES)];
+filters.forEach(([key, label]) => {
+    const n = key === 'all' ? PROJECTS.length : PROJECTS.filter(p => p.cat === key).length;
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = `filter t-${key}`;
+    b.dataset.filter = key;
+    b.setAttribute('aria-pressed', key === 'all');
+    b.innerHTML = `<span></span> <span class="count">${n}</span>`;
+    b.firstElementChild.textContent = label;
+    filterBar.appendChild(b);
+});
+
+const showMore = document.querySelector('.show-more');
+let expanded = false;
+
+function applyFilter(key) {
+    filterBar.querySelectorAll('.filter').forEach(b => b.setAttribute('aria-pressed', b.dataset.filter === key));
+    const limit = key === 'all' && !expanded;
+    grid.querySelectorAll('.project').forEach((c, i) => {
+        c.hidden = (key !== 'all' && c.dataset.cat !== key) || (limit && i >= INITIAL_SHOWN);
+    });
+    showMore.hidden = !limit;
+    showMore.textContent = `ดูผลงานทั้งหมด ${PROJECTS.length} โครงการ`;
+}
+showMore.addEventListener('click', () => {
+    expanded = true;
+    applyFilter('all');
+    grid.querySelectorAll('.project')[INITIAL_SHOWN].focus();
+});
+applyFilter('all');
+filterBar.addEventListener('click', e => {
+    const b = e.target.closest('.filter');
+    if (b) applyFilter(b.dataset.filter);
+});
+document.querySelectorAll('[data-jump]').forEach(a => {
+    a.addEventListener('click', () => applyFilter(a.dataset.jump));
+});
+
+/* ----- Project viewer ----- */
+const viewer = document.querySelector('.viewer');
+const stageImg = viewer.querySelector('.viewer-stage img');
+const thumbs = viewer.querySelector('.viewer-thumbs');
+let current = null, photo = 0;
+
+function showPhoto(i) {
+    photo = (i + current.imgs.length) % current.imgs.length;
+    stageImg.src = img(current.imgs[photo]);
+    stageImg.alt = `${current.client}: รูปที่ ${photo + 1} จาก ${current.imgs.length}`;
+    thumbs.querySelectorAll('button').forEach((t, k) => t.setAttribute('aria-current', k === photo));
+}
+
+function openProject(p) {
+    current = p;
+    viewer.style.setProperty('--c', `var(--pipe-${p.cat})`);
+    viewer.querySelector('.cat').textContent = CATEGORIES[p.cat];
+    viewer.querySelector('#viewer-title').textContent = p.client;
+    const dl = viewer.querySelector('dl');
+    dl.innerHTML = '';
+    [['งานที่ทำ', p.work], ['ผ่านผู้รับเหมา / ผู้ว่าจ้าง', p.via]].forEach(([k, v]) => {
+        if (!v) return;
+        const dt = document.createElement('dt'); dt.textContent = k;
+        const dd = document.createElement('dd'); dd.textContent = v;
+        dl.append(dt, dd);
+    });
+    thumbs.innerHTML = '';
+    p.imgs.forEach((n, k) => {
+        const t = document.createElement('button');
+        t.type = 'button';
+        t.setAttribute('aria-label', `รูปที่ ${k + 1}`);
+        t.innerHTML = `<img src="${thumb(n)}" alt="" loading="lazy">`;
+        t.addEventListener('click', () => showPhoto(k));
+        thumbs.appendChild(t);
+    });
+    const multi = p.imgs.length > 1;
+    viewer.querySelectorAll('.viewer-nav').forEach(b => { b.hidden = !multi; });
+    thumbs.hidden = !multi;
+    showPhoto(0);
+    viewer.showModal();
+}
+
+grid.addEventListener('click', e => {
+    const c = e.target.closest('.project');
+    if (c) openProject(PROJECTS[c.dataset.index]);
+});
+viewer.querySelector('.viewer-close').addEventListener('click', () => viewer.close());
+viewer.querySelector('.prev').addEventListener('click', () => showPhoto(photo - 1));
+viewer.querySelector('.next').addEventListener('click', () => showPhoto(photo + 1));
+viewer.addEventListener('click', e => { if (e.target === viewer) viewer.close(); });
+viewer.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') showPhoto(photo - 1);
+    if (e.key === 'ArrowRight') showPhoto(photo + 1);
+});
+
+/* ----- Mobile menu ----- */
+const toggle = document.querySelector('.nav-toggle');
+const nav = document.getElementById('main-nav');
+function setMenu(open) {
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'ปิดเมนู' : 'เปิดเมนู');
+    nav.classList.toggle('open', open);
+}
+toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+nav.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+
+/* ----- Quote form -----
+ * ส่งผ่าน FormSubmit (formsubmit.co) เข้าอีเมลใน FORM_TO โดยตรง
+ * ครั้งแรกที่มีคนส่งฟอร์ม FormSubmit จะส่งอีเมลยืนยัน (Activate) ไปที่ FORM_TO
+ * ต้องกดยืนยันก่อน ฟอร์มถึงจะเริ่มส่งข้อความเข้าอีเมลจริง
+ */
+const FORM_TO = 'admin@audomvit.com';
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${FORM_TO}`;
+const form = document.getElementById('quote-form');
+const status = form.querySelector('.form-status');
+const submitBtn = form.querySelector('[type="submit"]');
+
+function mailtoFallback(d) {
+    const body = [
+        `ชื่อผู้ติดต่อ: ${d.name}`,
+        `บริษัท/หน่วยงาน: ${d.company}`,
+        `เบอร์โทร: ${d.phone}`,
+        `อีเมล: ${d.email || '-'}`,
+        `ประเภทงาน: ${d.service}`,
+        '',
+        d.message || ''
+    ].join('\n');
+    return `mailto:${FORM_TO}?subject=${encodeURIComponent('ติดต่อสอบถาม: ' + d.service + ' (' + d.company + ')')}&body=${encodeURIComponent(body)}`;
+}
+
+form.addEventListener('submit', async e => {
+    e.preventDefault();
+    status.className = 'form-status';
+    const missing = [...form.querySelectorAll('[required]')].find(f => !f.value.trim());
+    if (missing) {
+        status.textContent = `กรุณากรอก${form.querySelector(`label[for="${missing.id}"]`).textContent}`;
+        status.classList.add('err');
+        missing.focus();
+        return;
+    }
+    const d = Object.fromEntries(new FormData(form));
+
+    submitBtn.disabled = true;
+    status.textContent = 'กำลังส่ง...';
+    try {
+        const res = await fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({
+                'ชื่อผู้ติดต่อ': d.name,
+                'บริษัท/หน่วยงาน': d.company,
+                'เบอร์โทร': d.phone,
+                'อีเมล': d.email || '-',
+                'ประเภทงาน': d.service,
+                'รายละเอียดงาน': d.message || '-',
+                email: d.email || undefined,
+                _subject: `ติดต่อสอบถาม: ${d.service} (${d.company})`,
+                _template: 'table',
+                _captcha: 'false',
+                _honey: d._honey
+            })
         });
+        const json = await res.json().catch(() => ({}));
+        if (!res.ok || String(json.success) !== 'true') throw new Error(json.message || res.status);
+        form.reset();
+        status.textContent = 'ได้รับข้อความของคุณแล้ว ทีมงานจะติดต่อกลับโดยเร็ว';
+        status.classList.add('ok');
+    } catch {
+        status.innerHTML = 'ส่งไม่สำเร็จ กรุณาโทร <a href="tel:+66863929190">086-392-9190</a> หรือ <a>ส่งทางอีเมล</a>';
+        status.lastElementChild.href = mailtoFallback(d);
+        status.classList.add('err');
+    } finally {
+        submitBtn.disabled = false;
+    }
+});
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Fade in animation on scroll
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        fadeElements.forEach(el => observer.observe(el));
-
-        // Form submission
-        const form = document.getElementById('contactForm');
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-            
-            // Here you would typically send the data to a server
-            console.log('Form submitted:', data);
-            
-            // Show success message
-            alert('ขอบคุณสำหรับข้อความ เราจะติดต่อกลับโดยเร็วที่สุด');
-            form.reset();
-        });
-
-        // Mobile menu toggle (basic functionality)
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        mobileMenuBtn.addEventListener('click', () => {
-            // Add your mobile menu toggle logic here
-            alert('Mobile menu - implement dropdown navigation');
-        });
-    </script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
