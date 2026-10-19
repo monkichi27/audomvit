@@ -640,6 +640,56 @@ h1, h2, h3 {
     box-shadow: 0 0 0 3px rgba(19, 160, 140, .25);
 }
 .field textarea { min-height: 120px; resize: vertical; }
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+.file-input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.file-drop {
+    display: flex;
+    align-items: center;
+    gap: .85rem;
+    padding: .9rem 1rem;
+    border: 1.5px dashed var(--line);
+    border-radius: 5px;
+    background: var(--paper-raised);
+    cursor: pointer;
+    font-weight: 500;
+}
+.file-drop:hover, .file-drop.dragging { border-color: var(--green); background: #fff; }
+.field:has(.file-input:focus-visible) .file-drop { outline: 3px solid var(--safety); outline-offset: 2px; }
+.file-drop svg { width: 1.5rem; height: 1.5rem; flex: none; color: var(--green); }
+.file-drop small { display: block; font-weight: 400; font-size: .875rem; color: var(--ink-soft); }
+.file-list { list-style: none; display: flex; flex-direction: column; gap: .35rem; }
+.file-list:empty { display: none; }
+.file-list li {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    padding: .35rem .4rem .35rem .75rem;
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    font-size: .9rem;
+}
+.file-list .name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.file-list .size { color: var(--ink-soft); flex: none; }
+.file-list button {
+    flex: none;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 4px;
+    background: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+.file-list button:hover { background: var(--line); }
 .form-actions { margin-top: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
 .form-status { font-size: .95rem; }
 .form-status.ok { color: var(--green); font-weight: 500; }
@@ -930,7 +980,7 @@ h1, h2, h3 {
         <div class="wrap contact-grid">
             <div>
                 <h2>คุยรายละเอียดงานกับเรา</h2>
-                <p>โทรเล่าอาการเครื่อง หรือส่งแบบและรูปหน้างานมาทางอีเมล หากจำเป็นต้องดูหน้างาน ทีมงานจะนัดวันเข้าสำรวจ</p>
+                <p>โทรเล่าอาการเครื่อง หรือแนบแบบและรูปหน้างานมากับฟอร์ม หากจำเป็นต้องดูหน้างาน ทีมงานจะนัดวันเข้าสำรวจ</p>
                 <a class="contact-phone" href="tel:+66863929190">086-392-9190</a>
                 <dl class="contact-details">
                     <dt>อีเมล</dt>
@@ -978,6 +1028,16 @@ h1, h2, h3 {
                     <div class="field full">
                         <label for="f-message">รายละเอียดงาน</label>
                         <textarea id="f-message" name="message" placeholder="เช่น ยี่ห้อและรุ่นเครื่อง อาการที่พบ จำนวนชุด สถานที่"></textarea>
+                    </div>
+                    <div class="field full">
+                        <label for="f-files">แนบรูปหรือไฟล์ <span class="opt">(ไม่บังคับ)</span></label>
+                        <label class="file-drop" for="f-files">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21.4 11.1 12.2 20.3a6 6 0 0 1-8.5-8.5l9.2-9.2a4 4 0 0 1 5.7 5.7l-9.2 9.2a2 2 0 0 1-2.8-2.8l8.5-8.5"/></svg>
+                            <span>เลือกรูปหรือ PDF<small>เช่น รูปป้ายรุ่นเครื่อง จุดที่เสีย หรือแบบงาน ไม่เกิน 5 ไฟล์</small></span>
+                        </label>
+                        <input id="f-files" class="file-input" type="file" accept="image/*,application/pdf" multiple aria-describedby="f-files-hint">
+                        <p class="sr-only" id="f-files-hint">รับรูปภาพและ PDF ไม่เกิน 5 ไฟล์ รวมกันไม่เกิน 9 MB รูปจะถูกย่อขนาดอัตโนมัติ</p>
+                        <ul class="file-list" aria-live="polite"></ul>
                     </div>
                 </div>
                 <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
@@ -1213,8 +1273,100 @@ function mailtoFallback(d) {
     return `mailto:${FORM_TO}?subject=${encodeURIComponent('ติดต่อสอบถาม: ' + d.service + ' (' + d.company + ')')}&body=${encodeURIComponent(body)}`;
 }
 
+/* ----- Attachments -----
+ * รูปถูกย่อเหลือด้านยาวไม่เกิน 1600px ก่อนส่ง เพื่อให้รวมกันไม่เกินขีดจำกัด 10 MB ของ FormSubmit
+ */
+const MAX_FILES = 5;
+const MAX_TOTAL = 9 * 1024 * 1024;
+const IMG_MAX_SIDE = 1600;
+const fileInput = document.getElementById('f-files');
+const fileList = form.querySelector('.file-list');
+const fileDrop = form.querySelector('.file-drop');
+let attachments = [];
+let preparing = Promise.resolve();
+
+const fmtSize = b => b < 1024 * 1024 ? `${Math.max(1, Math.round(b / 1024))} KB` : `${(b / 1024 / 1024).toFixed(1)} MB`;
+const totalSize = () => attachments.reduce((t, f) => t + f.size, 0);
+
+async function shrinkImage(file) {
+    if (!/^image\/(jpeg|png|webp|heic|heif)$/.test(file.type)) return file;
+    try {
+        const bmp = await createImageBitmap(file, { imageOrientation: 'from-image' });
+        const scale = Math.min(1, IMG_MAX_SIDE / Math.max(bmp.width, bmp.height));
+        if (scale === 1 && file.size < 700 * 1024) return file;
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.round(bmp.width * scale);
+        canvas.height = Math.round(bmp.height * scale);
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(bmp, 0, 0, canvas.width, canvas.height);
+        const blob = await new Promise(r => canvas.toBlob(r, 'image/jpeg', 0.82));
+        if (!blob || blob.size >= file.size) return file;
+        return new File([blob], file.name.replace(/\.\w+$/, '') + '.jpg', { type: 'image/jpeg' });
+    } catch {
+        return file;
+    }
+}
+
+function renderFiles() {
+    fileList.innerHTML = '';
+    attachments.forEach((f, i) => {
+        const li = document.createElement('li');
+        li.innerHTML = '<span class="name"></span><span class="size"></span><button type="button">&times;</button>';
+        li.querySelector('.name').textContent = f.name;
+        li.querySelector('.size').textContent = fmtSize(f.size);
+        const rm = li.querySelector('button');
+        rm.setAttribute('aria-label', `ลบไฟล์ ${f.name}`);
+        rm.addEventListener('click', () => { attachments.splice(i, 1); renderFiles(); fileInput.focus(); });
+        fileList.appendChild(li);
+    });
+}
+
+function fileError(msg) {
+    status.className = 'form-status err';
+    status.textContent = msg;
+}
+
+async function addFiles(files) {
+    status.className = 'form-status';
+    status.textContent = '';
+    const picked = [...files];
+    const allowed = picked.filter(f => f.type.startsWith('image/') || f.type === 'application/pdf');
+    if (allowed.length < picked.length) fileError('รับเฉพาะไฟล์รูปภาพและ PDF ไฟล์อื่นไม่ได้ถูกแนบ');
+    const room = MAX_FILES - attachments.length;
+    if (allowed.length > room) fileError(`แนบได้ไม่เกิน ${MAX_FILES} ไฟล์ ไฟล์ที่เกินไม่ได้ถูกแนบ`);
+    const queue = allowed.slice(0, Math.max(0, room));
+    if (!queue.length) return;
+    submitBtn.disabled = true;
+    status.textContent = status.textContent || 'กำลังเตรียมไฟล์...';
+    for (const f of queue) {
+        const ready = await shrinkImage(f);
+        if (totalSize() + ready.size > MAX_TOTAL) {
+            fileError(`ไฟล์ ${f.name} ใหญ่เกินไป ไฟล์แนบรวมกันต้องไม่เกิน 9 MB`);
+            continue;
+        }
+        attachments.push(ready);
+    }
+    if (status.textContent === 'กำลังเตรียมไฟล์...') status.textContent = '';
+    renderFiles();
+    submitBtn.disabled = false;
+}
+
+fileInput.addEventListener('change', () => {
+    preparing = addFiles(fileInput.files);
+    fileInput.value = '';
+});
+['dragenter', 'dragover'].forEach(t => fileDrop.addEventListener(t, e => { e.preventDefault(); fileDrop.classList.add('dragging'); }));
+['dragleave', 'drop'].forEach(t => fileDrop.addEventListener(t, () => fileDrop.classList.remove('dragging')));
+fileDrop.addEventListener('drop', e => {
+    e.preventDefault();
+    preparing = addFiles(e.dataTransfer.files);
+});
+
 form.addEventListener('submit', async e => {
     e.preventDefault();
+    await preparing;
     status.className = 'form-status';
     const missing = [...form.querySelectorAll('[required]')].find(f => !f.value.trim());
     if (missing) {
@@ -1225,29 +1377,66 @@ form.addEventListener('submit', async e => {
     }
     const d = Object.fromEntries(new FormData(form));
 
+    const body = new FormData();
+    Object.entries({
+        'ชื่อผู้ติดต่อ': d.name,
+        'บริษัท/หน่วยงาน': d.company,
+        'เบอร์โทร': d.phone,
+        'อีเมล': d.email || '-',
+        'ประเภทงาน': d.service,
+        'รายละเอียดงาน': d.message || '-',
+        'ไฟล์แนบ': attachments.length ? `${attachments.length} ไฟล์` : '-',
+        _subject: `ติดต่อสอบถาม: ${d.service} (${d.company})`,
+        _template: 'table',
+        _captcha: 'false',
+        _honey: d._honey || ''
+    }).forEach(([k, v]) => body.append(k, v));
+    if (d.email) body.append('email', d.email);
+
     submitBtn.disabled = true;
+
+    // ปลายทาง AJAX ของ FormSubmit ตัดไฟล์แนบทิ้ง ถ้ามีไฟล์จึงส่งแบบฟอร์มปกติแล้วให้ FormSubmit พากลับมาหน้านี้
+    if (attachments.length) {
+        status.textContent = 'กำลังส่งพร้อมไฟล์แนบ...';
+        const native = document.createElement('form');
+        native.method = 'POST';
+        native.action = FORM_ENDPOINT.replace('/ajax/', '/');
+        native.enctype = 'multipart/form-data';
+        native.hidden = true;
+        body.append('_next', `${location.origin}${location.pathname}?sent=1#contact`);
+        for (const [k, v] of body) {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = k;
+            input.value = v;
+            native.appendChild(input);
+        }
+        attachments.forEach((f, i) => {
+            const dt = new DataTransfer();
+            dt.items.add(f);
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.name = `attachment${i + 1}`;
+            input.files = dt.files;
+            native.appendChild(input);
+        });
+        document.body.appendChild(native);
+        native.submit();
+        return;
+    }
+
     status.textContent = 'กำลังส่ง...';
     try {
         const res = await fetch(FORM_ENDPOINT, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-            body: JSON.stringify({
-                'ชื่อผู้ติดต่อ': d.name,
-                'บริษัท/หน่วยงาน': d.company,
-                'เบอร์โทร': d.phone,
-                'อีเมล': d.email || '-',
-                'ประเภทงาน': d.service,
-                'รายละเอียดงาน': d.message || '-',
-                email: d.email || undefined,
-                _subject: `ติดต่อสอบถาม: ${d.service} (${d.company})`,
-                _template: 'table',
-                _captcha: 'false',
-                _honey: d._honey
-            })
+            headers: { Accept: 'application/json' },
+            body
         });
         const json = await res.json().catch(() => ({}));
         if (!res.ok || String(json.success) !== 'true') throw new Error(json.message || res.status);
         form.reset();
+        attachments = [];
+        renderFiles();
         status.textContent = 'ได้รับข้อความของคุณแล้ว ทีมงานจะติดต่อกลับโดยเร็ว';
         status.classList.add('ok');
     } catch {
@@ -1258,6 +1447,13 @@ form.addEventListener('submit', async e => {
         submitBtn.disabled = false;
     }
 });
+
+// กลับมาจาก FormSubmit หลังส่งแบบมีไฟล์แนบ
+if (new URLSearchParams(location.search).get('sent') === '1') {
+    status.className = 'form-status ok';
+    status.textContent = 'ได้รับข้อความและไฟล์แนบของคุณแล้ว ทีมงานจะติดต่อกลับโดยเร็ว';
+    history.replaceState(null, '', location.pathname + '#contact');
+}
 
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
