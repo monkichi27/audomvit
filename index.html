@@ -691,9 +691,16 @@ h1, h2, h3 {
 }
 .file-list button:hover { background: var(--line); }
 .form-actions { margin-top: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
-.form-status { font-size: .95rem; }
-.form-status.ok { color: var(--green); font-weight: 500; }
-.form-status.err { color: #B32D22; font-weight: 500; }
+.form-status { font-size: .95rem; scroll-margin: 96px 0 110px; }
+.form-status.ok, .form-status.err {
+    flex-basis: 100%;
+    padding: .8rem 1rem;
+    border-radius: 5px;
+    border-left: 4px solid;
+    font-weight: 500;
+}
+.form-status.ok { color: var(--green); background: #E2F1EC; }
+.form-status.err { color: #B32D22; background: #FBEAE7; }
 
 .show-more {
     display: block;
@@ -1411,7 +1418,7 @@ form.addEventListener('submit', async e => {
         native.action = FORM_ENDPOINT.replace('/ajax/', '/');
         native.enctype = 'multipart/form-data';
         native.hidden = true;
-        body.append('_next', `${location.origin}${location.pathname}?sent=1#contact`);
+        body.append('_next', `${location.origin}${location.pathname}?sent=1`);
         for (const [k, v] of body) {
             const input = document.createElement('input');
             input.type = 'hidden';
@@ -1453,14 +1460,24 @@ form.addEventListener('submit', async e => {
         status.classList.add('err');
     } finally {
         submitBtn.disabled = false;
+        revealStatus();
     }
 });
+
+// เลื่อนให้เห็นข้อความแจ้งผล บนมือถือข้อความนี้มักอยู่นอกจอ
+function revealStatus(smooth = true) {
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    status.scrollIntoView({ block: 'center', behavior: smooth && !reduce ? 'smooth' : 'auto' });
+}
 
 // กลับมาจาก FormSubmit หลังส่งแบบมีไฟล์แนบ
 if (new URLSearchParams(location.search).get('sent') === '1') {
     status.className = 'form-status ok';
     status.textContent = 'ได้รับข้อความและไฟล์แนบของคุณแล้ว ทีมงานจะติดต่อกลับโดยเร็ว';
-    history.replaceState(null, '', location.pathname + '#contact');
+    history.replaceState(null, '', location.pathname);
+    // รอฟอนต์โหลดก่อน เพื่อไม่ให้ตำแหน่งเลื่อนไปหลังจากเลื่อนแล้ว
+    (document.fonts ? document.fonts.ready : Promise.resolve())
+        .then(() => requestAnimationFrame(() => revealStatus(false)));
 }
 
 document.getElementById('year').textContent = new Date().getFullYear();
